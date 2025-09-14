@@ -1,0 +1,228 @@
+#+title: Física Experimental 1 - Mecânica
+#+title: Conservação de Energia Mecânica
+#+author: Prof. Nícolas Morazotti
+#+email: nicolas.morazotti@gmail.com
+#+property: header_args:jupyter-python :eval never-export 
+#+language: br
+#+latex_header: \usepackage[brazil]{babel}
+#+latex_header: \usepackage{minted}
+#+latex_header: \usepackage{tikz}
+#+latex_header: \usepackage{svg}
+#+latex_header: \usemintedstyle{emacs}
+#+latex_header: \setminted[python]{framesep=1.5mm, linenos, firstnumber=last}
+#+macro: color @@html:<font color="$1">$2</font>@@
+#+macro: yellow @@html:<font color="Yellow">$1</font>@@
+#+macro: blood @@html:<font color="#aa2233">$1</font>@@
+#+options: H:2 ':t toc:nil timestamp:nil num:nil reveal_width:3840 reveal_height:2160 date:nil
+:REVEAL_PROPERTIES:
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_THEME: blood 
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_TITLE_SLIDE: <h2 class="title">%t</h2>
+#+REVEAL_TITLE_SLIDE: <p class="subtitle"></p> <h3 class="author">%a</h3> <h3 class="email">%e</h3>
+#+REVEAL_TITLE_SLIDE: <h3 class="date">%d</h3> 
+# #+REVEAL_TITLE_SLIDE: <div id="org4eba3d0" class="figure"> <p><img src="img/BlackGenn_Dark.png" alt="BlackGenn_Dark.png" width="500px" /> </p> </div>
+#+REVEAL_MARGIN: 0.02
+#+REVEAL_INIT_OPTIONS: slideNumber:"c/t"
+#+REVEAL_MIN_SCALE: 0.5 
+#+REVEAL_MAX_SCALE: 35 
+#+REVEAL_EXTRA_CSS: custom.css
+#+REVEAL_EXTRA_SCRIPT_SRC: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+:END:
+    
+
+* Introdução 
+
+** Introdução 
+
+#+begin_export html
+<iframe width="960" height="540" src="https://www.youtube.com/embed/9wzqH9At4Ho" frameborder="0" allowfullscreen></iframe>
+#+end_export
+
+** Objetivos 
+- Estudar a transformação de energia em planos inclinados
+- Analisar condição de conservação de EM nesses sistemas,
+  identificando fontes não conservativas
+- Determinar coeficientes de atrito estático e dinâmico
+
+** Montagens disponíveis
+- Plano inclinado com ajuste de inclinação
+- Link de simulação disponível: [[https://phet.colorado.edu/sims/cheerpj/the-ramp/latest/the-ramp.html?simulation=the-ramp]]
+[[file:img/qrcode-phet.png]]
+
+* O plano inclinado
+
+** o plano inclinado
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 750
+[[file:img/plano_inclinado.png]]
+** o plano inclinado
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 300
+[[file:img/plano_inclinado.png]]
+- Reação de contato: tanto na direção normal quanto na direção tangencial
+- Tangencial: forças de atrito
+- Caso ideal: \(\mu=0\)
+** o plano inclinado
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 300
+[[file:img/plano_inclinado.png]]
+\begin{align*}
+\parallel\vec{F}|| = P\sin\theta &= mg \sin\theta\\
+\implies a &= g \sin\theta
+\end{align*}
+O plano inclinado *{{{yellow(reduz)}}}* a aceleração da queda livre por um fator
+igual ao *{{{yellow(seno)}}}* do ângulo de inclinação! (Galileu)
+** o plano inclinado
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_reveal: :frag (none appear appear) :frag_idx (1 2 3)
+- Contudo, para um ângulo \(\theta\) não muito grande, *{{{yellow(um corpo pode permanecer em repouso)}}}*
+- Como há uma força tangencial, *{{{yellow(deve haver uma contra-força)}}}* que
+  equilibre essa força!
+- *{{{yellow(Atrito!)}}}*
+
+** o plano inclinado
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 600
+[[file:img/plano_inclinado_com_forças.png]]
+** o plano inclinado
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 300
+[[file:img/plano_inclinado_com_forças.png]]
+
+A componente tangencial é
+\begin{align*}
+|| \vec{T}|| = P\sin\theta &= mg\sin\theta\\
+\vec{P} + \vec{N} + \vec{T} &= \vec{0}
+\end{align*}
+** atrito estático
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_reveal: :frag (none none none appear) :frag_idx (1 2 3 4)
+- A força tangencial /é a reação do plano/ à componente tangencial das outras forças
+- Chamado *{{{yellow(atrito estático)}}}*
+- *Opõe-se ao movimento* que haveria na ausência de atrito
+- Leis /*empíricas*/!
+** atrito estático
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+As leis do atrito são as seguintes:
+#+attr_reveal: :frag (none appear) :frag_idx (1 2)
+- A força de atrito máxima \(F_e\), na iminência do movimento do corpo, é proporcional ao módulo da força normal de contato: \[||\vec{F}_{\text{at}}||_{\text{máx}}=F_e=\mu_e ||\vec{N}||\]
+- O coeficiente de proporcionalidade {{{yellow(\(\mu_e\))}}} ({{{yellow(coeficiente de atrito estático)}}}) depende, dentre outras coisas, da natureza das superfícies em contato
+  
+** atrito cinético
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_reveal: :frag (none appear appear) :frag_idx (1 2 2)
+- *Independe da área de contato entre os corpos*  
+- Uma vez atingido o valor \(F_e\), o corpo inicia um movimento,
+  verificando-se uma diminuição na força de atrito: \[||\vec{F}||=F_c
+  = \mu_c ||\vec{N}||,\ \ \ \mu_c < \mu_e\]
+- {{{yellow(\(\mu_c\))}}} ({{{yellow(coeficiente de atrito cinético)}}})
+
+
+** atrito cinético
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 300
+[[file:img/plano_inclinado_com_forças.png]]
+
+Podemos variar o ângulo do plano inclinado. Com isso, até a iminência
+do movimento
+** atrito cinético
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 300
+[[file:img/plano_inclinado_com_forças.png]]
+
+\begin{align*}
+|\vec{N}| &= mg\cos\theta\\
+|\vec{F}| &= T= mg\sin\theta\\
+|\vec{F}|/|\vec{N}| &= mg\tan\theta
+\end{align*}
+
+** atrito cinético
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- O bloco começa a escorregar quando \(\theta\) atinge um valor \(\theta_e\);
+- Podemos, então, determinar o coeficiente de atrito estático através de \(\theta_e\):
+  \begin{align*}
+  \mu_e = \tan\theta_e.
+  \end{align*}
+
+** atrito cinético
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Todas as leis empíricas são aproximações não muito precisas de um
+fenômeno bastante complicado.
+
+Os resultados dependem de uma dezena de fatores, como a natureza dos
+materiais, seu grau de polimento, contaminação por impurezas etc.
+
+** movimento
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- Situação em que a inclinação é maior que o ângulo crítico para o
+  movimento (\(\theta>\theta_e\)):
+  \begin{align*}
+  |\vec{F}_R| &= mg\sin\theta - \mu_c|\vec{N}|\\
+  &= mg\sin\theta - \mu_cmg\cos\theta = ma\\
+  \mu_c &= \frac{g\sin\theta - a}{g\cos\theta}
+  \end{align*}
+  Com as medições da aceleração, podemos medir o coeficiente de atrito cinético.
+ 
+* Abordagem Energética
+
+** Abordagem Energética
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Se o corpo é liberado, do repouso, de uma altura \(h\) de um plano
+inclinado ideal, vemos que
+\begin{align*}
+mgh &= \frac{mv^2}{2}\\
+v &= \sqrt{2gh}.
+\end{align*}
+Contudo, no caso real, *{{{yellow(o plano inclinado possui atrito)}}}*.
+Podemos *estimar* o trabalho realizado pela força de atrito.
+
+** Abordagem Energética
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Note que a energia mecânica total de um sistema permanece constante em
+qualquer sistema isolado de objetos que interagem apenas por forças conservativas.
+
+** Abordagem Energética
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Do ponto de vista experimental, três questões relevantes devem ser
+abordadas:
+1) Quais outras forças podem atuar nestes sistemas?
+2) Quais os efeitos destas forças não conservativas para a mecânica do sistema?
+3) Como quantificar os efeitos não conservativos e compará-los com a
+   variação de energia mecânica observada?
+
+   *{{{yellow(Adote em seus cálculos: \(g = (978.5 \pm 0.5) cm/s^2\))}}}*

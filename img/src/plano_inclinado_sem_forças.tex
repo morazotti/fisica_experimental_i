@@ -1,0 +1,22 @@
+\documentclass[tikz,border=0mm]{standalone}
+\usepackage{tikz}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{background}{html}{#222222}
+\definecolor{foreground}{RGB}{255, 255, 255}
+\begin{document}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \draw[background, thick, ->] (2, {4/3 + 0.15}) -- (1.5, {4/3 + 0.15 +3/4}) node[right] {$\vec{N}$};
+    \draw[background, thick, ->] (2, {4/3 + 0.15}) -- ({1.5}, {1.2}) node[left] {$\vec{T}$};
+    \draw[background, thick, ->] (2, {4/3 + 0.15}) -- (2, {2/3}) node[right] {$m \vec{g}$};
+    \filldraw[color=foreground] (2, {4/3 + 0.15}) circle (4pt);
+    \draw[color=foreground] (0, 0) -- (3, 0) -- (3, 2) -- cycle;
+    \draw[color=foreground] (0.5, 0) arc (0:33.69007:0.5) node[above right] at (0.5, 0) {$\theta$};
+  \end{tikzpicture}
+\end{figure}
+\end{document}
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:
