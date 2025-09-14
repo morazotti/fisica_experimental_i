@@ -21,7 +21,7 @@
 #+REVEAL_TITLE_SLIDE: <h2 class="title">%t</h2>
 #+REVEAL_TITLE_SLIDE: <p class="subtitle"></p> <h3 class="author">%a</h3> <h3 class="email">%e</h3>
 #+REVEAL_TITLE_SLIDE: <h3 class="date">%d</h3> 
-# #+REVEAL_TITLE_SLIDE: <div id="org4eba3d0" class="figure"> <p><img src="img/BlackGenn_Dark.png" alt="BlackGenn_Dark.png" width="500px" /> </p> </div>
+# #+REVEAL_TITLE_SLIDE: <div id="org4eba3d0" class="figure"> <p><img src="../img/BlackGenn_Dark.png" alt="BlackGenn_Dark.png" width="500px" /> </p> </div>
 #+REVEAL_MARGIN: 0.02
 #+REVEAL_INIT_OPTIONS: slideNumber:"c/t"
 #+REVEAL_MIN_SCALE: 0.5 
@@ -48,7 +48,7 @@
 ** Montagens disponíveis
 - Plano inclinado com ajuste de inclinação
 - Link de simulação disponível: [[https://phet.colorado.edu/sims/cheerpj/the-ramp/latest/the-ramp.html?simulation=the-ramp]]
-[[file:img/qrcode-phet.png]]
+[[file:../img/qrcode-phet.png]]
 
 * O plano inclinado
 
@@ -57,13 +57,13 @@
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :width 750
-[[file:img/plano_inclinado.png]]
+[[file:../img/plano_inclinado.png]]
 ** o plano inclinado
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :width 300
-[[file:img/plano_inclinado.png]]
+[[file:../img/plano_inclinado.png]]
 - Reação de contato: tanto na direção normal quanto na direção tangencial
 - Tangencial: forças de atrito
 - Caso ideal: \(\mu=0\)
@@ -72,7 +72,7 @@
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :width 300
-[[file:img/plano_inclinado.png]]
+[[file:../img/plano_inclinado.png]]
 \begin{align*}
 \parallel\vec{F}|| = P\sin\theta &= mg \sin\theta\\
 \implies a &= g \sin\theta
@@ -94,13 +94,13 @@ igual ao *{{{yellow(seno)}}}* do ângulo de inclinação! (Galileu)
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :width 600
-[[file:img/plano_inclinado_com_forças.png]]
+[[file:../img/plano_inclinado_com_forças.png]]
 ** o plano inclinado
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :width 300
-[[file:img/plano_inclinado_com_forças.png]]
+[[file:../img/plano_inclinado_com_forças.png]]
 
 A componente tangencial é
 \begin{align*}
@@ -142,7 +142,7 @@ As leis do atrito são as seguintes:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :width 300
-[[file:img/plano_inclinado_com_forças.png]]
+[[file:../img/plano_inclinado_com_forças.png]]
 
 Podemos variar o ângulo do plano inclinado. Com isso, até a iminência
 do movimento
@@ -151,7 +151,7 @@ do movimento
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :width 300
-[[file:img/plano_inclinado_com_forças.png]]
+[[file:../img/plano_inclinado_com_forças.png]]
 
 \begin{align*}
 |\vec{N}| &= mg\cos\theta\\
