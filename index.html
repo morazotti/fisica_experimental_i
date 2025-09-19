@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-09-18 Thu 23:59 -->
+<!-- 2025-09-19 Fri 00:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -25,18 +25,14 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgdbae6a5">Instruções</a></li>
-<li><a href="#orgaab4a07">Módulo 1 - Transformação e Conservação de Energia Mecânica</a>
-<ul>
-<li><a href="#orgf4e88c8">Teste</a></li>
-</ul>
-</li>
+<li><a href="#org0f1acb6">Instruções</a></li>
+<li><a href="#org8f5423a">Módulo 1 - Transformação e Conservação de Energia Mecânica</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdbae6a5" class="outline-2">
-<h2 id="orgdbae6a5">Instruções</h2>
-<div class="outline-text-2" id="text-orgdbae6a5">
+<div id="outline-container-org0f1acb6" class="outline-2">
+<h2 id="org0f1acb6">Instruções</h2>
+<div class="outline-text-2" id="text-org0f1acb6">
 <p>
 Os slides das aulas utilizam <a href="https://revealjs.com">reveal.js</a>. Por isso, eles podem não ser
 muito intuitivos em seu uso. Sempre que utilizar, clique <code>N</code> para
@@ -45,9 +41,9 @@ avançar para o próximo slide, <code>P</code> para retornar ao slide anterior, 
 </p>
 </div>
 </div>
-<div id="outline-container-orgaab4a07" class="outline-2">
-<h2 id="orgaab4a07">Módulo 1 - Transformação e Conservação de Energia Mecânica</h2>
-<div class="outline-text-2" id="text-orgaab4a07">
+<div id="outline-container-org8f5423a" class="outline-2">
+<h2 id="org8f5423a">Módulo 1 - Transformação e Conservação de Energia Mecânica</h2>
+<div class="outline-text-2" id="text-org8f5423a">
 <p>
 <a href="src/aula_setembro_11-12.html">[slides] </a>
 </p>
@@ -58,42 +54,11 @@ potencial com a energia cinética, bem como a transformação de uma em
 outra, e possíveis fontes de dissipação envolvidas num sistema de
 plano inclinado.
 </p>
-
-
-<div class="org-src-container">
-<pre class="src src-jupyter-python"><span style="color: #bb9af7;">import</span> numpy <span style="color: #bb9af7;">as</span> np
-<span style="color: #bb9af7;">import</span> matplotlib.pyplot <span style="color: #bb9af7;">as</span> plt
-<span style="color: #bb9af7;">import</span> plotly.express <span style="color: #bb9af7;">as</span> px
-<span style="color: #bb9af7;">import</span> plotly.graph_objects <span style="color: #bb9af7;">as</span> go
-<span style="color: #bb9af7;">import</span> plotly.io <span style="color: #bb9af7;">as</span> pio
-
-<span style="color: #c0caf5;">ergs2J</span> = 1e-7 <span style="color: #51587a;"># </span><span style="color: #51587a;">converte energia para o SI </span>
-<span style="color: #c0caf5;">m</span> = 158 <span style="color: #51587a;"># </span><span style="color: #51587a;">g</span>
-<span style="color: #c0caf5;">g</span> = 978.5 <span style="color: #51587a;"># </span><span style="color: #51587a;">cm/s^2</span>
-<span style="color: #c0caf5;">theta</span> = 25*np.pi/180 
-<span style="color: #c0caf5;">at</span> = g*np.sin<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>
-<span style="color: #c0caf5;">ax</span> = at*np.cos<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>
-<span style="color: #c0caf5;">ay</span> = at*np.sin<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>
-<span style="color: #c0caf5;">h0</span> = 23 <span style="color: #51587a;"># </span><span style="color: #51587a;">cm</span>
-<span style="color: #c0caf5;">h</span> = h0 - at*np.sin<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>*t**2/2 <span style="color: #51587a;"># </span><span style="color: #51587a;">cm</span>
-<span style="color: #c0caf5;">t</span> = np.linspace<span style="color: #a9b1d6;">(</span>0, 10*np.sqrt<span style="color: #7aa2f7;">(</span>2*h0/ay<span style="color: #7aa2f7;">)</span>, 100<span style="color: #a9b1d6;">)</span>
-<span style="color: #c0caf5;">vx</span> = ax*t
-<span style="color: #c0caf5;">vy</span> = ay*t
-<span style="color: #c0caf5;">v</span> = np.sqrt<span style="color: #a9b1d6;">(</span>ax**2 + ay**2<span style="color: #a9b1d6;">)</span>*t*np.sin<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>
-<span style="color: #c0caf5;">U</span> = ergs2J*m*g*h
-<span style="color: #c0caf5;">K</span> = ergs2J*m*v**2/2
-</pre>
-</div>
-
-<iframe src="img/teste.html" width="90%" height="500px"></iframe>
-</div>
-<div id="outline-container-orgf4e88c8" class="outline-3">
-<h3 id="orgf4e88c8">Teste</h3>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2025-09-18 Thu 23:59</p>
+<p class="date">Created: 2025-09-19 Fri 00:06</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

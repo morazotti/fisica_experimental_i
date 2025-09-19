@@ -58,4 +58,3 @@ plano inclinado.
 # <iframe src="img/teste.html" width="90%" height="500px"></iframe>
 # #+end_export
 
-# ** Teste 
