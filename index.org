@@ -1,1 +1,61 @@
-- [[file:src/aula_setembro_11-12.html][Módulo 1 - Conservação e Transformação de Energia Mecânica]]
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+#+property: header-args:jupyter-python :session /home/nicolas/.local/share/jupyter/runtime/kernel-a23756f4-693a-41d2-b87d-d15d19657094.json
+#+options: num:nil
+
+* Instruções
+
+Os slides das aulas utilizam [[https://revealjs.com][reveal.js]]. Por isso, eles podem não ser
+muito intuitivos em seu uso. Sempre que utilizar, clique =N= para
+avançar para o próximo slide, =P= para retornar ao slide anterior, e
+=O=, para ver a estrutura de slides.
+
+* Módulo 1 - Transformação e Conservação de Energia Mecânica
+[[file:src/aula_setembro_11-12.html][[slides] ]]
+
+Nesta aula, estudamos o conceito de *Energia Mecânica*, soma da energia
+potencial com a energia cinética, bem como a transformação de uma em
+outra, e possíveis fontes de dissipação envolvidas num sistema de
+plano inclinado.
+
+
+# #+begin_src jupyter-python
+#   import numpy as np
+#   import matplotlib.pyplot as plt
+#   import plotly.express as px
+#   import plotly.graph_objects as go
+#   import plotly.io as pio
+
+#   ergs2J = 1e-7 # converte energia para o SI 
+#   m = 158 # g
+#   g = 978.5 # cm/s^2
+#   theta = np.pi/6 # 30o
+#   t = np.linspace(0, 10, 100)
+#   y0, vy0 = 20, 0 # cm, cm/s
+#   x0, vx0 = 20/np.tan(theta), 0 # cm, cm/s
+#   x, vx = x0 + vx0*t, vx0
+#   y = y0 + vy0*t - g*t**2/2
+  
+# #+end_src
+
+# #+RESULTS:
+
+# #+begin_src jupyter-python :results output :file "img/teste.html" :exports results
+#     p = go.Figure()
+#     p.add_trace(go.Scatter(x=t, y=U, mode='lines', name='Energia Potencial Gravitacional'))
+#     p.add_trace(go.Scatter(x=t, y=K, mode='lines', name='Energia Cinética'))
+#     p.add_trace(go.Scatter(x=t, y=U+K, mode='lines', name='Energia Mecânica'))
+#     p.update_layout(
+#         title="Energias do sistema",
+#         xaxis_title="Tempo (s)",
+#         yaxis_title="Energia (J)",
+#     )
+#     p.write_html("img/teste.html")
+# #+end_src
+
+# #+RESULTS:
+
+# #+begin_export html
+# <iframe src="img/teste.html" width="90%" height="500px"></iframe>
+# #+end_export
+
+# ** Teste 

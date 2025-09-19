@@ -1,5 +1,5 @@
-#+title: Física Experimental 1 - Mecânica
-#+title: Conservação de Energia Mecânica
+# #+title: Física Experimental 1 - Mecânica
+#+title: Transformação e Conservação de Energia Mecânica
 #+author: Prof. Nícolas Morazotti
 #+email: nicolas.morazotti@gmail.com
 #+property: header_args:jupyter-python :eval never-export 
@@ -156,7 +156,7 @@ do movimento
 \begin{align*}
 |\vec{N}| &= mg\cos\theta\\
 |\vec{F}| &= T= mg\sin\theta\\
-|\vec{F}|/|\vec{N}| &= mg\tan\theta
+|\vec{F}|/|\vec{N}| &= \tan\theta
 \end{align*}
 
 ** atrito cinético
