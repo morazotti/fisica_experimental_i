@@ -1,13 +1,14 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
-#+property: header-args:jupyter-python :session /home/nicolas/.local/share/jupyter/runtime/kernel-a23756f4-693a-41d2-b87d-d15d19657094.json
+#+SETUPFILE: /home/nicolas/.config/emacs/macros/plotly.org
+#+property: header-args:jupyter-python :session /home/nicolas/.local/share/jupyter/runtime/kernel-c869b7d7-4f33-45a4-a0f5-d02ad5a9cae8.json
+#+property: header-args:jupyter-python+ :eval never-export
 #+options: num:nil
 
 * Instruções
-
 Os slides das aulas utilizam [[https://revealjs.com][reveal.js]]. Por isso, eles podem não ser
 muito intuitivos em seu uso. Sempre que utilizar, clique =N= para
-avançar para o próximo slide, =P= para retornar ao slide anterior, e
-=O=, para ver a estrutura de slides.
+avançar para o próximo slide, =P= para retornar ao slide anterior e
+=O= para ver a estrutura de slides.
 
 * Módulo 1 - Transformação e Conservação de Energia Mecânica
 [[file:src/aula_setembro_11-12.html][[slides] ]]
@@ -17,44 +18,108 @@ potencial com a energia cinética, bem como a transformação de uma em
 outra, e possíveis fontes de dissipação envolvidas num sistema de
 plano inclinado.
 
+No caso ideal, temos uma transformação completa de energia potencial
+gravitacional em energia mecânica. Como vimos em aula,
+\begin{align*}
+x &= x_0 + v_{0x} t + \frac{a_xt^2}{2}\\
+y &= y_0 + v_{0y} t + \frac{a_yt^2}{2}.
+\end{align*}
+As acelerações em questão são dadas por
+\begin{align*}
+a_x &= -g\sin\theta\cos\theta\\
+a_y &= -g\sin^2\theta.
+\end{align*}
+{{{blood((Demonstre!))}}}
 
-# #+begin_src jupyter-python
-#   import numpy as np
-#   import matplotlib.pyplot as plt
-#   import plotly.express as px
-#   import plotly.graph_objects as go
-#   import plotly.io as pio
+Podemos introduzir algumas medidas (sem suas incertezas) de massa,
+altura inicial e ângulo do plano inclinado, e ver a transformação de
+energia no sistema envolvido.
+#+begin_src jupyter-python
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import plotly.express as px
+  import plotly.graph_objects as go
+  import plotly.io as pio
 
-#   ergs2J = 1e-7 # converte energia para o SI 
-#   m = 158 # g
-#   g = 978.5 # cm/s^2
-#   theta = np.pi/6 # 30o
-#   t = np.linspace(0, 10, 100)
-#   y0, vy0 = 20, 0 # cm, cm/s
-#   x0, vx0 = 20/np.tan(theta), 0 # cm, cm/s
-#   x, vx = x0 + vx0*t, vx0
-#   y = y0 + vy0*t - g*t**2/2
-  
+  ergs2J = 1e-7 # converte energia para o SI 
+  m = 407.2 # g
+  g = 978.5 # cm/s^2
+  theta = np.pi/6 # 30°
+  y0, v0y = 20, 0 # cm, cm/s
+  x0, v0x = 20/np.tan(theta), 0
+  t = np.linspace(0, np.sqrt(2*y0/(g*np.sin(theta)**2)), 100)
+  h = y0 + v0y*t - g*np.sin(theta)**2*t**2/2
+  x = h/np.tan(theta)
+#+end_src
+
+#+RESULTS:
+
+#+begin_src jupyter-python
+  U = m*g*h*ergs2J
+  vx = v0x - g*np.cos(theta)*np.sin(theta)*t
+  vy = v0y - g*np.sin(theta)**2*t
+  v2 = vx*vx + vy*vy
+  K = m*v2*ergs2J/2
+#+end_src
+
+#+RESULTS:
+
+#+begin_src jupyter-python :results output :file "img/energia_mecanica_ideal.json" :exports results
+  p = go.Figure()
+  p.add_trace(go.Scatter(x=t, y=U, mode='lines', name='Energia Potencial Gravitacional'))
+  p.add_trace(go.Scatter(x=t, y=K, mode='lines', name='Energia Cinética'))
+  p.add_trace(go.Scatter(x=t, y=U+K, mode='lines', name='Energia Mecânica'))
+  p.update_layout(
+      title="Energias do sistema no caso ideal",
+      xaxis_title="Tempo (s)",
+      yaxis_title="Energia (J)",
+  )
+  with open("img/energia_mecanica_ideal.json", "w") as f:
+      f.write(p.to_json())
+#+end_src
+
+{{{plotly(energia_mecanica_ideal,img/energia_mecanica_ideal.json)}}}
+
+No caso real, há uma perda de energia mecânica devido ao atrito
+cinético.
+# A aceleração, em cada ângulo associado, temos
+
+
+#+begin_src jupyter-python :results output :file "img/energia_mecanica_beta.json" :exports results
+  beta = 0.8
+  p = go.Figure()
+  p.add_trace(go.Scatter(x=t, y=U, mode='lines', name='Energia Potencial Gravitacional'))
+  p.add_trace(go.Scatter(x=t, y=0.8*K, mode='lines', name='Energia Cinética'))
+  p.add_trace(go.Scatter(x=t, y=U+0.8*K, mode='lines', name='Energia Mecânica'))
+  p.update_layout(
+      title="Energias do sistema com atrito",
+      xaxis_title="Tempo (s)",
+      yaxis_title="Energia (J)",
+  )
+  with open("img/energia_mecanica_beta.json", "w") as f:
+      f.write(p.to_json())
+#+end_src
+
+#+RESULTS:
+{{{plotly(energia_mecanica_beta,img/energia_mecanica_beta.json)}}}
+
+
+# #+begin_src jupyter-python :results output :file "img/atrito.json" :exports results
+#   mu = 0.2
+#   Wat = ergs2J*mu*m*g*h/np.tan(theta)
+#   p = go.Figure()
+#   p.add_trace(go.Scatter(x=t, y=Wat, mode='lines', name='Energia Potencial Gravitacional'))
+#   # p.add_trace(go.Scatter(x=t, y=0.8*K, mode='lines', name='Energia Cinética'))
+#   # p.add_trace(go.Scatter(x=t, y=U+0.8*K, mode='lines', name='Energia Mecânica'))
+#   p.update_layout(
+#       title="Energias do sistema com atrito",
+#       xaxis_title="Tempo (s)",
+#       yaxis_title="Energia (J)",
+#   )
+#   with open("img/atrito.json", "w") as f:
+#       f.write(p.to_json())
 # #+end_src
 
-# #+RESULTS:
-
-# #+begin_src jupyter-python :results output :file "img/teste.html" :exports results
-#     p = go.Figure()
-#     p.add_trace(go.Scatter(x=t, y=U, mode='lines', name='Energia Potencial Gravitacional'))
-#     p.add_trace(go.Scatter(x=t, y=K, mode='lines', name='Energia Cinética'))
-#     p.add_trace(go.Scatter(x=t, y=U+K, mode='lines', name='Energia Mecânica'))
-#     p.update_layout(
-#         title="Energias do sistema",
-#         xaxis_title="Tempo (s)",
-#         yaxis_title="Energia (J)",
-#     )
-#     p.write_html("img/teste.html")
-# #+end_src
-
-# #+RESULTS:
-
-# #+begin_export html
-# <iframe src="img/teste.html" width="90%" height="500px"></iframe>
-# #+end_export
-
+#+RESULTS:
+# {{{plotly(atrito,img/atrito.json)}}}
+* COMMENT Módulo 2

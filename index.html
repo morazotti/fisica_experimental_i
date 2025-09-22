@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-09-19 Fri 00:06 -->
+<!-- 2025-09-21 Sun 23:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -18,6 +18,39 @@
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/code-copy.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
+</script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
 <div id="content" class="content">
@@ -25,25 +58,25 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0f1acb6">Instruções</a></li>
-<li><a href="#org8f5423a">Módulo 1 - Transformação e Conservação de Energia Mecânica</a></li>
+<li><a href="#org9fdf78e">Instruções</a></li>
+<li><a href="#org46b6ef6">Módulo 1 - Transformação e Conservação de Energia Mecânica</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0f1acb6" class="outline-2">
-<h2 id="org0f1acb6">Instruções</h2>
-<div class="outline-text-2" id="text-org0f1acb6">
+<div id="outline-container-org9fdf78e" class="outline-2">
+<h2 id="org9fdf78e">Instruções</h2>
+<div class="outline-text-2" id="text-org9fdf78e">
 <p>
 Os slides das aulas utilizam <a href="https://revealjs.com">reveal.js</a>. Por isso, eles podem não ser
 muito intuitivos em seu uso. Sempre que utilizar, clique <code>N</code> para
-avançar para o próximo slide, <code>P</code> para retornar ao slide anterior, e
-<code>O</code>, para ver a estrutura de slides.
+avançar para o próximo slide, <code>P</code> para retornar ao slide anterior e
+<code>O</code> para ver a estrutura de slides.
 </p>
 </div>
 </div>
-<div id="outline-container-org8f5423a" class="outline-2">
-<h2 id="org8f5423a">Módulo 1 - Transformação e Conservação de Energia Mecânica</h2>
-<div class="outline-text-2" id="text-org8f5423a">
+<div id="outline-container-org46b6ef6" class="outline-2">
+<h2 id="org46b6ef6">Módulo 1 - Transformação e Conservação de Energia Mecânica</h2>
+<div class="outline-text-2" id="text-org46b6ef6">
 <p>
 <a href="src/aula_setembro_11-12.html">[slides] </a>
 </p>
@@ -54,11 +87,77 @@ potencial com a energia cinética, bem como a transformação de uma em
 outra, e possíveis fontes de dissipação envolvidas num sistema de
 plano inclinado.
 </p>
+
+<p>
+No caso ideal, temos uma transformação completa de energia potencial
+gravitacional em energia mecânica. Como vimos em aula,
+</p>
+\begin{align*}
+x &= x_0 + v_{0x} t + \frac{a_xt^2}{2}\\
+y &= y_0 + v_{0y} t + \frac{a_yt^2}{2}.
+\end{align*}
+<p>
+As acelerações em questão são dadas por
+</p>
+\begin{align*}
+a_x &= -g\sin\theta\cos\theta\\
+a_y &= -g\sin^2\theta.
+\end{align*}
+<p>
+<font color="#aa2233">(Demonstre!)</font>
+</p>
+
+<p>
+Podemos introduzir algumas medidas (sem suas incertezas) de massa,
+altura inicial e ângulo do plano inclinado, e ver a transformação de
+energia no sistema envolvido.
+</p>
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #bb9af7;">import</span> numpy <span style="color: #bb9af7;">as</span> np
+<span style="color: #bb9af7;">import</span> matplotlib.pyplot <span style="color: #bb9af7;">as</span> plt
+<span style="color: #bb9af7;">import</span> plotly.express <span style="color: #bb9af7;">as</span> px
+<span style="color: #bb9af7;">import</span> plotly.graph_objects <span style="color: #bb9af7;">as</span> go
+<span style="color: #bb9af7;">import</span> plotly.io <span style="color: #bb9af7;">as</span> pio
+
+<span style="color: #c0caf5;">ergs2J</span> = 1e-7 <span style="color: #51587a;"># </span><span style="color: #51587a;">converte energia para o SI </span>
+<span style="color: #c0caf5;">m</span> = 407.2 <span style="color: #51587a;"># </span><span style="color: #51587a;">g</span>
+<span style="color: #c0caf5;">g</span> = 978.5 <span style="color: #51587a;"># </span><span style="color: #51587a;">cm/s^2</span>
+<span style="color: #c0caf5;">theta</span> = np.pi/6 <span style="color: #51587a;"># </span><span style="color: #51587a;">30&#176;</span>
+<span style="color: #c0caf5;">y0</span>, <span style="color: #c0caf5;">v0y</span> = 20, 0 <span style="color: #51587a;"># </span><span style="color: #51587a;">cm, cm/s</span>
+<span style="color: #c0caf5;">x0</span>, <span style="color: #c0caf5;">v0x</span> = 20/np.tan<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>, 0
+<span style="color: #c0caf5;">t</span> = np.linspace<span style="color: #a9b1d6;">(</span>0, np.sqrt<span style="color: #7aa2f7;">(</span>2*y0/<span style="color: #ff9e64;">(</span>g*np.sin<span style="color: #73daca;">(</span>theta<span style="color: #73daca;">)</span>**2<span style="color: #ff9e64;">)</span><span style="color: #7aa2f7;">)</span>, 100<span style="color: #a9b1d6;">)</span>
+<span style="color: #c0caf5;">h</span> = y0 + v0y*t - g*np.sin<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>**2*t**2/2
+<span style="color: #c0caf5;">x</span> = h/np.tan<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python"><span style="color: #c0caf5;">U</span> = m*g*h*ergs2J
+<span style="color: #c0caf5;">vx</span> = v0x - g*np.cos<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>*np.sin<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>*t
+<span style="color: #c0caf5;">vy</span> = v0y - g*np.sin<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>**2*t
+<span style="color: #c0caf5;">v2</span> = vx*vx + vy*vy
+<span style="color: #c0caf5;">K</span> = m*v2*ergs2J/2
+</pre>
+</div>
+
+<p>
+<div id="energia_mecanica_ideal"></div><script> fetch("img/energia_mecanica_ideal.json")  .then(r => r.json())  .then(fig => Plotly.newPlot("energia_mecanica_ideal", fig.data, fig.layout, {frames: fig.frames || []}));  </script>
+</p>
+
+<p>
+No caso real, há uma perda de energia mecânica devido ao atrito
+cinético.
+</p>
+
+
+<p>
+<div id="energia_mecanica_beta"></div><script> fetch("img/energia_mecanica_beta.json")  .then(r => r.json())  .then(fig => Plotly.newPlot("energia_mecanica_beta", fig.data, fig.layout, {frames: fig.frames || []}));  </script>
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2025-09-19 Fri 00:06</p>
+<p class="date">Created: 2025-09-21 Sun 23:35</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
