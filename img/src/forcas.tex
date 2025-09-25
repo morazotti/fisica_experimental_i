@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{background}{html}{#222222}
+\definecolor{foreground}{RGB}{255, 255, 255}
+\begin{document}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \draw[black, ->] (0, 0) -- (1, 0) node[above] {$\vec{F}_{12}$};
+    \draw[black, ->] (3, 0) -- (2, 0) node[above] {$\vec{F}_{21}$};
+    \node[black, above] at (0, 0.5) {$1$};
+    \node[black, above] at (3, 0.5) {$2$};
+    \filldraw[blue] (0, 0) circle (8 pt) node[white, bold] at (0, 0) {$m_1$};
+    \filldraw[red] (3, 0) circle (10 pt) node[white, bold] at (3, 0) {$m_2$};
+    \draw
+  \end{tikzpicture}
+\end{figure}
+\end{document}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: t
+%%% End:

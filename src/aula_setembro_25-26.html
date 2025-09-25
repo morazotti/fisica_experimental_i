@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+<meta charset="utf-8"/>
+<title>Conservação de <i>momentum</i> linear</title>
+<meta name="author" content="Prof. Nícolas Morazotti"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h2 class="title">Conservação de <i>momentum</i> linear</h2>
+<p class="subtitle"></p> <h3 class="author">Prof. Nícolas Morazotti</h3> <h3 class="email"><a href="mailto:nicolas.morazotti@gmail.com">nicolas.morazotti@gmail.com</a></h3>
+<h3 class="date"></h3>
+</section>
+
+<section>
+<section id="slide-org5ae1b5b">
+<h2 id="org5ae1b5b">Introdução</h2>
+<div class="outline-text-2" id="text-org5ae1b5b">
+</div>
+</section>
+<section id="slide-orgc548696">
+<h3 id="orgc548696">Introdução</h3>
+<iframe width="960" height="540" src="https://www.youtube.com/embed/sBQsuvbmv3U?si=XCInRnrRgOow9Gze" frameborder="0" allowfullscreen></iframe>
+</section>
+<section id="slide-org868c6dd">
+<h3 id="org868c6dd">Objetivos</h3>
+<ul>
+<li>Estudar as condições de conservação de <i>momentum</i> linear e energia
+cinética, tanto para massas iguais ou diferentes, em colisões 2D</li>
+<li>Classificar colisões estudadas através da <font color="Yellow">determinação do coeficiente de restituição</font></li>
+
+</ul>
+</section>
+<section id="slide-orga3c9923">
+<h3 id="orga3c9923">Montagens disponíveis</h3>
+<ul>
+<li>FlatBalls</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org3dcda6c">
+<h2 id="org3dcda6c">O <i>momentum</i> linear</h2>
+<div class="outline-text-2" id="text-org3dcda6c">
+</div>
+</section>
+<section id="slide-org7b73847" data-auto-animate>
+<h3 id="org7b73847">O <i>momentum</i> linear</h3>
+<div>
+\begin{align*}
+\vec{p} = m\vec{v}
+\end{align*}
+
+</div>
+<ul>
+<li>Permite <b><font color="Yellow">distinguir quantitativamente</font></b> entre
+partículas leves e pesadas com mesma velocidade \(\vec{v}\).</li>
+
+</ul>
+</section>
+<section id="slide-org692f542" data-auto-animate>
+<h3 id="org692f542">O <i>momentum</i> linear</h3>
+<ul>
+<li><p>
+Com segunda Lei de Newton, relacionamos o <i>momentum</i> linear de uma
+partícula com a força resultante aplicada nela:
+</p>
+<div>
+\begin{align*}
+\sum_i \vec{F}_i &= \frac{\mathrm{d}\vec{p}}{\mathrm{d}t} = \frac{\mathrm{d}(m\vec{v})}{\mathrm{d}t}
+\end{align*}
+
+</div></li>
+
+</ul>
+</section>
+<section id="slide-org49aaedf" data-auto-animate>
+<h3 id="org49aaedf">O <i>momentum</i> linear</h3>
+<ul>
+<li>Por sua vez, o <i>momentum</i> linear de um sistema composto de \(N\)
+partículas pode ser obtido utilizando o <b><font color="Yellow">princípio de substituição</font></b></li>
+<li>\(m_i,\ \vec{p}_i,\ \vec{r}_i\) grandezas de cada uma das partículas</li>
+<li>\(\vec{P} = \sum_{i=1}^N \vec{p}_i = \sum_{i=1}^N m_i \vec{v}_i\)</li>
+<li>\(\vec{P} = \sum_{i=1}^N m_i \frac{\mathrm{d}\vec{r}_i}{\mathrm{d}t}\)</li>
+
+</ul>
+</section>
+<section id="slide-orgc22662f" data-auto-animate>
+<h3 id="orgc22662f">O <i>momentum</i> linear</h3>
+<ul>
+<li>\(\vec{P} = \sum_{i=1}^N m_i \frac{\mathrm{d}\vec{r}_i}{\mathrm{d}t}\)</li>
+<li>O centro de massa é a posição ponderada com a massa de cada ponto</li>
+<li>\(\vec{r}_{CM} = \frac{\sum_{i=1}^N m_i \vec{r}_i}{\sum_{i=1}^N m_i}\)</li>
+
+</ul>
+</section>
+<section id="slide-org23f2e8c" data-auto-animate>
+<h3 id="org23f2e8c">O <i>momentum</i> linear</h3>
+<ul>
+<li>\(\vec{P} = \sum_{i=1}^N m_i \frac{\mathrm{d}\vec{r}_i}{\mathrm{d}t}\)</li>
+<li>\(\vec{r}_{CM} = \frac{\sum_{i=1}^N m_i \vec{r}_i}{\sum_{i=1}^N m_i}\)</li>
+
+</ul>
+<p>
+Com um pouco de álgebra,
+</p>
+<ul>
+<li>\(\vec{P} = \sum_{i=1}^{N} m_i \frac{\mathrm{d} \vec{r}_i}{\mathrm{d} t}\)</li>
+<li>\(\vec{P}= \frac{\mathrm{d}}{\mathrm{d} t}\left( \sum_{i=1}^{N} m_i \vec{r}_i \right)\)</li>
+
+</ul>
+</section>
+<section id="slide-org65cc719" data-auto-animate>
+<h3 id="org65cc719">O <i>momentum</i> linear</h3>
+<ul>
+<li>\(\vec{P} = \sum_{i=1}^N m_i \frac{\mathrm{d}\vec{r}_i}{\mathrm{d}t}\)</li>
+<li>\(\vec{r}_{CM} = \frac{\sum_{i=1}^N m_i \vec{r}_i}{\sum_{i=1}^N m_i}\)</li>
+<li>\(\vec{P}= \frac{\mathrm{d}}{\mathrm{d} t}\left( \sum_{i=1}^{N} m_i \vec{r}_i \right)\)</li>
+<li>\(\vec{P}= \sum_{i=1}^{N}m_i\frac{\mathrm{d}}{\mathrm{d} t}\vec{r}_{CM}\)</li>
+<li data-fragment-index="5" class="fragment appear">\(\vec{P}= M\vec{v}_{CM}\)</li>
+
+</ul>
+</section>
+<section id="slide-org3d5ff3b" data-auto-animate>
+<h3 id="org3d5ff3b">O <i>momentum</i> linear</h3>
+<ul>
+<li>\(\vec{P}= M\vec{v}_{CM}\)</li>
+
+</ul>
+
+<p>
+O <i>momentum</i> linear de um sistema de partículas é o produto da massa
+  total do sistema pela velocidade do centro de massa
+</p>
+</section>
+<section id="slide-orgebedef6" data-auto-animate>
+<h3 id="orgebedef6">A conservação do <i>momentum</i> linear</h3>
+<p>
+Considere um sistema de dois objetos 1 e 2 que interagem mutuamente
+<img src="file:///home/nicolas/Dropbox/UFSCar/2025_Aulas/1002317_FisExpIMec/aulas/img/forcas.png" alt="forcas.png" />
+</p>
+</section>
+<section id="slide-orge796817" data-auto-animate>
+<h3 id="orge796817">A conservação do <i>momentum</i> linear</h3>
+
+<div id="org132bdfa" class="figure">
+<p><img src="file:///home/nicolas/Dropbox/UFSCar/2025_Aulas/1002317_FisExpIMec/aulas/img/forcas.png" alt="forcas.png" width="350" />
+</p>
+</div>
+
+<ul>
+<li>\(\frac{\mathrm{d}}{\mathrm{d}t}\vec{p}_1 = \vec{F}_{12} + \vec{F}_1^{ext}\)</li>
+<li>\(\frac{\mathrm{d}}{\mathrm{d}t}\vec{p}_2 = \vec{F}_{21} + \vec{F}_2^{ext}\)</li>
+<li data-fragment-index="3" class="fragment appear">Pela 3a Lei de Newton,</li>
+<li data-fragment-index="4" class="fragment appear">\(\vec{F}_{12} = -\vec{F}_{21}\)</li>
+
+</ul>
+</section>
+<section id="slide-org620ec48" data-auto-animate>
+<h3 id="org620ec48">A conservação do <i>momentum</i> linear</h3>
+<ul>
+<li>\(\frac{\mathrm{d}}{\mathrm{d}t}\vec{p}_1 = \vec{F}_{12} + \vec{F}_1^{ext}\)</li>
+<li>\(\frac{\mathrm{d}}{\mathrm{d}t}\vec{p}_2 = \vec{F}_{21} + \vec{F}_2^{ext}\)</li>
+<li>\(\frac{\mathrm{d}}{\mathrm{d}t}(\vec{p}_1 + \vec{p}_2) = \frac{\mathrm{d}\vec{P}}{\mathrm{d}t} = \vec{F}_1^{ext}+\vec{F}_2^{ext}\)</li>
+
+</ul>
+</section>
+<section id="slide-org6137301" data-auto-animate>
+<h3 id="org6137301">A conservação do <i>momentum</i> linear</h3>
+<p>
+Na ausência de forças externas,
+</p>
+<div>
+\begin{align*}
+\frac{\mathrm{d}}{\mathrm{d}t}\vec{P} = \vec{0}.
+\end{align*}
+
+</div>
+<p>
+O <i>momentum</i> linear de um sistema isolado se conserva
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgeda9f16">
+<h2 id="orgeda9f16">Energias cinética e potencial</h2>
+<div class="outline-text-2" id="text-orgeda9f16">
+</div>
+</section>
+<section id="slide-org9e5d8f6" data-auto-animate>
+<h3 id="org9e5d8f6">Energias cinética e potencial</h3>
+<p>
+Outra quantidade importante que descreve o sistema é a <b>energia cinética</b> \(K\)
+</p>
+<ul>
+<li>\(K = \frac{1}{2}m |\vec{v}|^2 \)</li>
+<li>\(|\vec{v}| = \sqrt{\vec{v}\cdot \vec{v}} = \sqrt{v_x^2+v_y^2+v_z^2}\)</li>
+
+</ul>
+</section>
+<section id="slide-orgf1dd00c" data-auto-animate>
+<h3 id="orgf1dd00c">Energias cinética e potencial</h3>
+
+<div id="org584a2fd" class="figure">
+<p><img src="file:///home/nicolas/Dropbox/UFSCar/2025_Aulas/1002317_FisExpIMec/aulas/img/forcas.png" alt="forcas.png" width="350" />
+</p>
+</div>
+<ul>
+<li>\(K = \frac{1}{2}m |\vec{v}|^2 \)
+Para o sistema em análise, reescrevemos</li>
+<li>\(K = \frac{(\vec{p}_1)^2}{2m_1}+\frac{(\vec{p}_2)^2}{2m_2}\)</li>
+
+</ul>
+</section>
+<section id="slide-org1516a0c" data-auto-animate>
+<h3 id="org1516a0c">Energias cinética e potencial</h3>
+<ul>
+<li>\(K = \frac{(\vec{p}_1)^2}{2m_1}+\frac{(\vec{p}_2)^2}{2m_2}\)</li>
+
+</ul>
+<p>
+Diferenciando \(K\) no tempo:
+</p>
+<div>
+\begin{align*}
+\frac{\mathrm{d}K}{\mathrm{d}t} &= \frac{\vec{p}_2}{m_2}\cdot \frac{\mathrm{d}\vec{p}_2}{\mathrm{d}t}
++ \frac{\vec{p}_2}{m_2}\cdot \frac{\mathrm{d}\vec{p}_2}{\mathrm{d}t}\\
+&= \vec{v}_1\cdot \vec{F}_{12}+\vec{v}_2\cdot \vec{F}_{21}
+\end{align*}
+
+</div>
+</section>
+<section id="slide-orgb71456d" data-auto-animate>
+<h3 id="orgb71456d">Energias cinética e potencial</h3>
+<ul>
+<li>Por outro lado, podemos analisar o trabalho realizado por
+\(\vec{F}_{12}\). Caso a força seja <b><font color="Yellow">conservativa</font></b>,
+ele depende <b><font color="Yellow">apenas da distância entre as posições</font></b>
+(por não depender do caminho).</li>
+<li>\(U(\vec{r}_1,\vec{r}_2) = U(\vec{r}_1-\vec{r}_2)\)</li>
+<li>Isso significa que o <b><font color="Yellow">espaço é uniforme</font></b>.</li>
+
+</ul>
+</section>
+<section id="slide-org17940dc" data-auto-animate>
+<h3 id="org17940dc">Energias cinética e potencial</h3>
+<p>
+Forças conservativas podem ser escritas como o <b><font color="Yellow">gradiente da energia potencial</font></b> (a menos de um sinal)
+</p>
+<ul>
+<li>\(\vec{F}_{12} = -\frac{\partial U(\vec{r}_1 - \vec{r}_2)}{\partial \vec{r}_1}\)</li>
+<li>\(\vec{F}_{21} = -\frac{\partial U(\vec{r}_1 - \vec{r}_2)}{\partial \vec{r}_2}\)</li>
+
+</ul>
+</section>
+<section id="slide-orgee3504a" data-auto-animate>
+<h3 id="orgee3504a">Energias cinética e potencial</h3>
+<ul>
+<li>\(\vec{F}_{12} = -\frac{\partial U(\vec{r}_1 - \vec{r}_2)}{\partial \vec{r}_1}\)</li>
+<li>\(\vec{F}_{21} = -\frac{\partial U(\vec{r}_1 - \vec{r}_2)}{\partial \vec{r}_2}\)</li>
+<li data-fragment-index="3" class="fragment appear">\(\frac{\mathrm{d}K}{\mathrm{d}t} = -\frac{\mathrm{d}\vec{r}_1}{\mathrm{d}t}\cdot \frac{\partial U(\vec{r}_1 - \vec{r}_2)}{\partial \vec{r}_1}-\frac{\mathrm{d}\vec{r}_2}{\mathrm{d}t}\cdot \frac{\partial U(\vec{r}_1 - \vec{r}_2)}{\partial \vec{r}_2}\)</li>
+<li data-fragment-index="4" class="fragment appear">\(\frac{\mathrm{d}K}{\mathrm{d}t} = -\frac{\mathrm{d}U(\vec{r}_1 - \vec{r}_2)}{\mathrm{d}t} \)</li>
+
+</ul>
+</section>
+<section id="slide-org3ae776a" data-auto-animate>
+<h3 id="org3ae776a">Energias cinética e potencial</h3>
+<ul>
+<li>\(\frac{\mathrm{d}K}{\mathrm{d}t} = -\frac{\mathrm{d}U(\vec{r}_1 - \vec{r}_2)}{\mathrm{d}t} \)</li>
+<li>\(\frac{\mathrm{d}}{\mathrm{d}t} [K + U(\vec{r}_1 - \vec{r}_2)] = 0\)
+Com isso, vemos que <font color="Yellow">a energia mecânica se conserva</font>.</li>
+<li>Se a força não for conservativa, não podemos escrever
+\(U(\vec{r}_1 - \vec{r}_2)\) e a energia cinética diminui.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org252b8fa">
+<h2 id="org252b8fa">Colisões</h2>
+
+<div id="orge8ffb31" class="figure">
+<p><img src="file:///home/nicolas/repos/fisica_experimental_i/img/static1.squarespace-2.gif" alt="static1.squarespace-2.gif" />
+</p>
+</div>
+
+<p>
+Em um evento de colisão entre partículas, dependendo das forças
+atuantes, alguns resultados são possíveis
+</p>
+</section>
+<section id="slide-org5e9d76b" data-auto-animate>
+<h3 id="org5e9d76b">Colisões</h3>
+<ul>
+<li>Se houverem apenas forças internas, a aplicação da conservação de
+energia mecânica e <i>momentum</i> linear é apropriado</li>
+<li>Em muitos casos, a conservação de \(\vec{p}\) é apropriada mesmo em
+sistemas não isolados, <font color="Yellow">contanto que as forças externas sejam muito menores que as forças internas</font></li>
+
+</ul>
+</section>
+<section id="slide-orga817bf4" data-auto-animate>
+<h3 id="orga817bf4">Colisões</h3>
+<p>
+Classificamos as colisões em três categorias, de acordo com a
+consevação (ou não) da energia cinética total dos corpos:
+</p>
+<ul>
+<li data-fragment-index="1" class="fragment appear"><font color="Yellow">Colisão elástica</font>: toda energia cinética é conservada;
+não há deformação dos corpos</li>
+<li data-fragment-index="2" class="fragment appear"><font color="Yellow">Colisão inelástica</font>: a energia cinética total não é conservada</li>
+<li data-fragment-index="3" class="fragment appear"><font color="Yellow">Colisão perfeitamente inelástica</font>: os corpos, ao
+colidirem, grudam um no outro</li>
+
+</ul>
+</section>
+<section id="slide-orgf3747c6" data-auto-animate>
+<h3 id="orgf3747c6">Colisões</h3>
+<ul>
+<li>O coeficiente de restituição <font color="Yellow">\(e\)</font> facilita o estudo
+quantitativo das colisões.</li>
+
+</ul>
+</section>
+<section id="slide-orga9431f6" data-auto-animate>
+<h3 id="orga9431f6">Colisões</h3>
+
+<div id="org410c5ca" class="figure">
+<p><img src="file:///home/nicolas/Dropbox/UFSCar/2025_Aulas/1002317_FisExpIMec/aulas/img/col1dapprox.png" alt="col1dapprox.png" height="100" /> 
+</p>
+</div>
+<div>
+\begin{align*}
+v_{approx} &= v_1-v_2
+\end{align*}
+
+</div>
+</section>
+<section id="slide-orgf5c2895" data-auto-animate>
+<h3 id="orgf5c2895">Colisões</h3>
+
+<div id="org694f033" class="figure">
+<p><img src="file:///home/nicolas/Dropbox/UFSCar/2025_Aulas/1002317_FisExpIMec/aulas/img/col1dafast.png" alt="col1dafast.png" scale="12" /> 
+</p>
+</div>
+<div>
+\begin{align*}
+v_{afast} &= v'_1-v'_2
+\end{align*}
+
+</div>
+</section>
+<section id="slide-org26ad460" data-auto-animate>
+<h3 id="org26ad460">Colisões</h3>
+<p>
+O coeficente então é calculado como
+\[e = \frac{|v'_1 - v'_2|}{|v_1 - v_2|}\]
+</p>
+<ul>
+<li>\(e=1\): Colisão perfeitamente elástica</li>
+<li>\( 0 < e<1\): Colisão inelástica</li>
+<li>\(e=0\): Colisão perfeitamente inelástica</li>
+
+</ul>
+</section>
+<section id="slide-org36a8cc9" data-auto-animate>
+<h3 id="org36a8cc9">Colisões elásticas unidimensionais</h3>
+<ul>
+<li>A conservação do <i>momentum</i> linear entre antes e depois da colisão é dada por</li>
+
+</ul>
+<div>
+\begin{align*}
+\vec{p}_1 + \vec{p}_2 &= \vec{p}'_1 + \vec{p}'_2\\
+m_1\vec{v}_1 + m_2\vec{v}_2 &= m_1\vec{v}'_1 + m_2\vec{v}'_2
+\end{align*}
+
+</div>
+</section>
+<section id="slide-org6f57dc4" data-auto-animate>
+<h3 id="org6f57dc4">Colisões elásticas unidimensionais</h3>
+<ul>
+<li>Por se tratar de um movimento 1D,</li>
+
+</ul>
+<div>
+\begin{align*}
+p_1 + p_2 &= p'_1 + p'_2\\
+m_1v_1 + m_2v_2 &= m_1v'_1 + m_2v'_2
+\end{align*}
+
+</div>
+</section>
+<section id="slide-orgca2aea4" data-auto-animate>
+<h3 id="orgca2aea4">Colisões elásticas unidimensionais</h3>
+<p>
+Na colisão elástica, a energia cinética também se conserva:
+</p>
+<div>
+\begin{align*}
+\frac{1}{2}m_1v_1^2 + \frac{1}{2}m_2v_2^2 &= \frac{1}{2}m_1v'^2_1 + \frac{1}{2}m_2v'^2_2
+\end{align*}
+
+</div>
+<ul>
+<li>Assumimos as massas e as velocidades iniciais conhecidas.</li>
+<li>Duas equações, duas incógnitas: <font color="Yellow">sistema solúvel!</font></li>
+
+</ul>
+</section>
+<section id="slide-orgfe5783a" data-auto-animate>
+<h3 id="orgfe5783a">Colisões elásticas unidimensionais</h3>
+<ul>
+<li>\(m_1v_1 + m_2v_2 = m_1v'_1 + m_2v'_2\)</li>
+<li>\(m_1v_1^2 + m_2v_2^2 = m_1v'^2_1 + m_2v'^2_2\)</li>
+
+</ul>
+<p>
+Rearranjando os termos referentes a cada partícula individual a cada
+um dos lados, temos
+</p>
+<ul>
+<li>\(m_1(v_1 - v_1') = m_2(v_2' - v_2)\)</li>
+<li>\(m_1(v_1^2 - v_1'^2) = m_2(v_2'^2 - v_2^2)\)</li>
+
+</ul>
+</section>
+<section id="slide-org2acd130" data-auto-animate>
+<h3 id="org2acd130">Colisões elásticas unidimensionais</h3>
+<ul>
+<li>\(m_1(v_1 - v_1') = m_2(v_2' - v_2)\)</li>
+<li>\(m_1(v_1^2 - v_1'^2) = m_2(v_2'^2 - v_2^2)\)</li>
+<li>Com a relação de diferença de quadrados \(a^2 - b^2 = (a+b)(a-b)\),
+podemos dividir a segunda equação pela primeira:</li>
+<li>\(v_1 + v_1' = v_2' + v_2\)</li>
+
+</ul>
+</section>
+<section id="slide-org271969d" data-auto-animate>
+<h3 id="org271969d">Colisões elásticas unidimensionais</h3>
+<ol>
+<li>\(m_1(v_1 - v_1') = m_2(v_2' - v_2)\) 
+<a id="org5d782c1"></a></li>
+<li>\(v_1 + v_1' = v_2' + v_2\)</li>
+
+</ol>
+<p>
+Se usarmos a equação 2 para substituir \(v_2'\) na equação 1,
+encontramos
+</p>
+<ul>
+<li>\(v'_1 = \left( \frac{m_1 - m_2}{m_1+m_2} \right)v_1 + \left( \frac{2m_2}{m_1+m_2} \right) v_2\)</li>
+<li>\(v'_2 = \left( \frac{2m_1}{m_1+m_2} \right) v_1 + \left( \frac{m_2 - m_1}{m_1+m_2} \right)v_2\)</li>
+
+</ul>
+</section>
+<section id="slide-org2c26495" data-auto-animate>
+<h3 id="org2c26495">Colisões elásticas unidimensionais</h3>
+<p>
+Repare também que a equação a seguir nos dá uma relação útil para o
+coeficiente de restituição.
+</p>
+<ol>
+<li>\(v_1 + v_1' = v_2' + v_2\)</li>
+<li>\(v_1 - v_2 = - (v_1' - v_2')\)</li>
+
+</ol>
+
+
+<p>
+Logo,
+</p>
+<ul>
+<li>\(e = \frac{|v_2' - v_1'|}{|v_2 - v_1} = 1\)</li>
+
+</ul>
+</section>
+<section id="slide-org4cb478f" data-auto-animate>
+<h3 id="org4cb478f">Colisões inelásticas unidimensionais</h3>
+<ul>
+<li>No caso de uma colisão <b><font color="Yellow">perfeitamente inelástica</font></b>, não
+temos a conservação de energia cinética</li>
+<li>Contudo, temos uma equação extra \(v_1' = v_2' = v_f\), já que os corpos terminam a colisão grudados</li>
+<li>\(m_1v_1 + m_2v_2 = m_1v'_1 + m_2v'_2\)</li>
+<li>\(v_f = \frac{m_1v_1 + m_2 v_2}{m_1 + m_2}\)</li>
+
+</ul>
+</section>
+<section id="slide-org124d05d" data-auto-animate>
+<h3 id="org124d05d">Colisões inelásticas unidimensionais</h3>
+<p>
+No caso de uma colisão inelástica, temos ainda a conservação de
+\(\vec{P}\):
+</p>
+<ul>
+<li>\(m_1v_1 + m_2v_2 = m_1v'_1 + m_2v'_2\)</li>
+
+</ul>
+
+<p>
+Entretanto, mesmo a massa sendo conhecida, já não somos capazes de
+determinar \(v_1'\) e \(v_2'\). Devido a isso, não somos capazes de
+prever o movimento sem saber alguma outra informação
+</p>
+</section>
+<section id="slide-org0af6484" data-auto-animate>
+<h3 id="org0af6484">Colisões inelásticas unidimensionais</h3>
+<ul>
+<li>Podemos encontrar as velocidades dos corpos em função do coeficiente
+de restituição</li>
+<li>\(\Delta v = |v_2 - v_1|\)</li>
+<li>\(\Delta v' = |v'_2 - v'_1|\)</li>
+<li>\(e = \frac{\Delta v'}{\Delta v}\)</li>
+
+</ul>
+</section>
+<section id="slide-org9203833" data-auto-animate>
+<h3 id="org9203833">Colisões inelásticas unidimensionais</h3>
+<ul>
+<li>\(e = \frac{\Delta v'}{\Delta v}\)</li>
+<li>Com isso, encontramos as velocidades após a colisão como</li>
+<li>\(v_1' = \frac{m_1v_1 + m_2 v_2}{m_1 + m_2} - e \left(\frac{m_2}{m_1 + m_2} \right) \Delta v\)</li>
+<li>\(v_2' = \frac{m_1v_1 + m_2 v_2}{m_1 + m_2} + e \left(\frac{m_1}{m_1 + m_2} \right) \Delta v\)</li>
+
+</ul>
+</section>
+<section id="slide-orgaa994d6" data-auto-animate>
+<h3 id="orgaa994d6">Colisões inelásticas unidimensionais</h3>
+<ul>
+<li><p>
+Com essas equações, encontramos a variação de energia cinética
+devido à colisão \(\Delta K\) como
+</p>
+<div>
+\begin{align*}
+\Delta K = \frac{1}{2}\left( \frac{m_1m_2}{m_1+m_2} \right)\Delta v^2(1-e^2)
+\end{align*}
+
+</div></li>
+
+</ul>
+</section>
+<section id="slide-org4bb2613" data-auto-animate>
+<h3 id="org4bb2613">Colisões bidimensionais</h3>
+<ul>
+<li>Numa colisão bidimensional, o movimento ocorre num plano</li>
+<li><p>
+Nesse caso, o coeficiente de restituição é
+</p>
+<div>
+\begin{align*}
+e = \frac{|\vec{v}'_2 - \vec{v}'_1|}{|\vec{v}_2 - \vec{v}_1|}
+\end{align*}
+
+</div></li>
+
+</ul>
+</section>
+<section id="slide-org6179ffc" data-auto-animate>
+<h3 id="org6179ffc">Colisões bidimensionais</h3>
+<ul>
+<li>Consideramos, por simplicidade, um dos corpos em repouso</li>
+
+</ul>
+
+
+
+<div id="org994efc4" class="figure">
+<p><img src="file:///home/nicolas/repos/fisica_experimental_i/img/choque-1.gif" alt="choque-1.gif" />
+</p>
+</div>
+</section>
+<section id="slide-org1580465" data-auto-animate>
+<h3 id="org1580465">Colisões elásticas bidimensionais</h3>
+
+<div id="orgf3768ef" class="figure">
+<p><img src="file:///home/nicolas/repos/fisica_experimental_i/img/parametro_impacto.jpg" alt="parametro_impacto.jpg" />
+</p>
+</div>
+</section>
+<section id="slide-org17f25e2" data-auto-animate>
+<h3 id="org17f25e2">Colisões elásticas bidimensionais</h3>
+
+<div id="org78e0911" class="figure">
+<p><img src="file:///home/nicolas/repos/fisica_experimental_i/img/parametro_impacto.jpg" alt="parametro_impacto.jpg" width="350" />
+</p>
+</div>
+
+<p>
+Conservação de <i>momentum</i> em cada direção:
+</p>
+<ul>
+<li>\(m_1 v_1 = m_1 v_1' \cos(\theta_1) + m_2 v_2'\cos(\theta_2)\)</li>
+<li>\(0 = -m_1 v_1' \sin(\theta_1) + m_2 v_2'\sin(\theta_2)\)</li>
+
+</ul>
+</section>
+<section id="slide-org9dccd6e" data-auto-animate>
+<h3 id="org9dccd6e">Colisões elásticas bidimensionais</h3>
+<ul>
+<li>\(m_1 v_1 = m_1 v_1' \cos(\theta_1) + m_2 v_2'\cos(\theta_2)\)</li>
+<li>\(0 = -m_1 v_1' \sin(\theta_1) + m_2 v_2'\sin(\theta_2)\)</li>
+
+</ul>
+
+<p>
+Conservação da energia cinética total + massa \(m_2\) inicialmente em repouso
+</p>
+<ul>
+<li>\(\frac{1}{2}m_1v_1^2 = \frac{1}{2}m_1v'^2_1 + \frac{1}{2}m_2v'^2_2\)</li>
+
+</ul>
+</section>
+<section id="slide-orgddd039e" data-auto-animate>
+<h3 id="orgddd039e">Colisões elásticas bidimensionais</h3>
+<ul>
+<li>\(m_1 v_1 = m_1 v_1' \cos(\theta_1) + m_2 v_2'\cos(\theta_2)\)</li>
+<li>\(0 = -m_1 v_1' \sin(\theta_1) + m_2 v_2'\sin(\theta_2)\)</li>
+<li><p>
+\(\frac{1}{2}m_1v_1^2 = \frac{1}{2}m_1v'^2_1 + \frac{1}{2}m_2v'^2_2\)
+</p>
+
+<p>
+Não conseguimos encontrar os módulos das velocidades e os ângulos
+sem uma outra equação. Precisamos de outro dado adicional, já que
+temos quatro incógnitas e três equações.
+</p></li>
+
+</ul>
+</section>
+<section id="slide-org4bedb72" data-auto-animate>
+<h3 id="org4bedb72">Colisões elásticas bidimensionais</h3>
+<ol>
+<li>\(m_1 v_1 = m_1 v_1' \cos(\theta_1) + m_2 v_2'\cos(\theta_2)\)</li>
+<li>\(0 = -m_1 v_1' \sin(\theta_1) + m_2 v_2'\sin(\theta_2)\)</li>
+
+</ol>
+
+<p>
+Elevando 1. e 2. ao quadrado, no caso simplificado de massas iguais:
+</p>
+<ul>
+<li>\(v_1^2 = v_1'^2 \cos^2(\theta_1) + v_2'^2 \cos^2(\theta_2) + 2 v_1'v_2'\cos(\theta_1)\cos(\theta_{2})\)</li>
+<li>\(0 = v_{1}'^{2} \sin^{2}(\theta_{1}) + v_{2}'^{2}\sin^{2}(\theta_{2})-2v_{1}'v_{2}'\sin(\theta_{1})\sin(\theta_{2})\)</li>
+
+</ul>
+</section>
+<section id="slide-org8e9f70a" data-auto-animate>
+<h3 id="org8e9f70a">Colisões elásticas bidimensionais</h3>
+<ul>
+<li>\(v_1^2 = v_1'^2 \cos^2(\theta_1) + v_2'^2 \cos^2(\theta_2) + 2 v_1'v_2'\cos(\theta_1)\cos(\theta_{2})\)</li>
+<li>\(0 = v_{1}'^{2} \sin^{2}(\theta_{1}) + v_{2}'^{2}\sin^{2}(\theta_{2})-2v_{1}'v_{2}'\sin(\theta_{1})\sin(\theta_{2})\)</li>
+
+</ul>
+
+
+<p>
+Somando as equações:
+-\(v_1^2 = v_1'^2 + v_2'^2 + 2v_1'v_2' \left[\cos(\theta_1)\cos(\theta_2) - \sin(\theta_1)\sin(\theta_2) \right]\) 
+</p>
+</section>
+<section id="slide-org5be7455" data-auto-animate>
+<h3 id="org5be7455">Colisões elásticas bidimensionais</h3>
+<ol>
+<li>\(v_1^2 = v_1'^2 + v_2'^2 + 2v_1'v_2' \left[\cos(\theta_1)\cos(\theta_2) - \sin(\theta_1)\sin(\theta_2) \right]\)</li>
+
+</ol>
+
+<p>
+Simplificando a conservação de energia cinética e aplicando na equação 1,
+</p>
+<ul>
+<li>\(v_1^2 = v'^2_1 + v'^2_2\)</li>
+<li>\(0 = 2v_1'v_2' \cos(\theta_1+\theta_2)\)</li>
+
+</ul>
+</section>
+<section id="slide-org24f13ab" data-auto-animate>
+<h3 id="org24f13ab">Colisões elásticas bidimensionais</h3>
+<ul>
+<li>\(0 = 2v_1'v_2' \cos(\theta_1+\theta_2)\)</li>
+<li data-fragment-index="2" class="fragment appear">Única maneira de satisfazer essa equação:</li>
+<li data-fragment-index="2" class="fragment appear">\(\theta_1+\theta_2=\frac{\pi}{2}\)</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown, RevealZoom, RevealNotes],
+slideNumber:"c/t"
+});
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
