@@ -126,3 +126,6 @@ cinético.
 
 * Módulo 2 - Conservação do /Momentum/ Linear
 [[file:src/aula_setembro_25-26.html][[slides]​]]
+
+Nesta aula, estudamos, com auxílio de uma FlatBall, a conservação do
+/momentum/ linear durante uma colisão.
