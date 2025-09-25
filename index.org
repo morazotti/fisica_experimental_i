@@ -1,5 +1,6 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 #+SETUPFILE: /home/nicolas/.config/emacs/macros/plotly.org
+#+SETUPFILE: /home/nicolas/.config/emacs/macros/colors.org
 #+property: header-args:jupyter-python :session /home/nicolas/.local/share/jupyter/runtime/kernel-c869b7d7-4f33-45a4-a0f5-d02ad5a9cae8.json
 #+property: header-args:jupyter-python+ :eval never-export
 #+options: num:nil
@@ -122,4 +123,6 @@ cinético.
 
 #+RESULTS:
 # {{{plotly(atrito,img/atrito.json)}}}
-* COMMENT Módulo 2
+
+* Módulo 2 - Conservação do /Momentum/ Linear
+[[file:src/aula_setembro_25-26.html][[slides]​]]
