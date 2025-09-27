@@ -72,7 +72,7 @@
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 - Por sua vez, o /momentum/ linear de um sistema composto de \(N\)
-  partículas pode ser obtido utilizando o *{{{yellow(princípio de substituição)}}}*
+  partículas pode ser obtido utilizando o *{{{yellow(princípio de superposição)}}}*
 - \(m_i,\ \vec{p}_i,\ \vec{r}_i\) grandezas de cada uma das partículas
 - \(\vec{P} = \sum_{i=1}^N \vec{p}_i = \sum_{i=1}^N m_i \vec{v}_i\)
 - \(\vec{P} = \sum_{i=1}^N m_i \frac{\mathrm{d}\vec{r}_i}{\mathrm{d}t}\)
@@ -121,14 +121,14 @@ O /momentum/ linear de um sistema de partículas é o produto da massa
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 Considere um sistema de dois objetos 1 e 2 que interagem mutuamente
-[[file:~/Dropbox/UFSCar/2025_Aulas/1002317_FisExpIMec/aulas/img/forcas.png]]
+[[file:../img/forcas.png]]
 
 ** A conservação do /momentum/ linear
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :width 350
-[[file:~/Dropbox/UFSCar/2025_Aulas/1002317_FisExpIMec/aulas/img/forcas.png]]
+[[file:../img/forcas.png]]
 
 #+attr_reveal: :frag (none none appear appear) :frag_idx (1 2 3 4)
 - \(\frac{\mathrm{d}}{\mathrm{d}t}\vec{p}_1 = \vec{F}_{12} + \vec{F}_1^{ext}\)
@@ -167,7 +167,7 @@ Outra quantidade importante que descreve o sistema é a *energia cinética* \(K\
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :width 350
-[[file:~/Dropbox/UFSCar/2025_Aulas/1002317_FisExpIMec/aulas/img/forcas.png]]
+[[file:../img/forcas.png]]
 - \(K = \frac{1}{2}m |\vec{v}|^2 \)
  Para o sistema em análise, reescrevemos
 - \(K = \frac{(\vec{p}_1)^2}{2m_1}+\frac{(\vec{p}_2)^2}{2m_2}\)
@@ -178,7 +178,7 @@ Outra quantidade importante que descreve o sistema é a *energia cinética* \(K\
 - \(K = \frac{(\vec{p}_1)^2}{2m_1}+\frac{(\vec{p}_2)^2}{2m_2}\)
 Diferenciando \(K\) no tempo:
 \begin{align*}
-\frac{\mathrm{d}K}{\mathrm{d}t} &= \frac{\vec{p}_2}{m_2}\cdot \frac{\mathrm{d}\vec{p}_2}{\mathrm{d}t}
+\frac{\mathrm{d}K}{\mathrm{d}t} &= \frac{\vec{p}_1}{m_1}\cdot \frac{\mathrm{d}\vec{p}_1}{\mathrm{d}t}
 + \frac{\vec{p}_2}{m_2}\cdot \frac{\mathrm{d}\vec{p}_2}{\mathrm{d}t}\\
 &= \vec{v}_1\cdot \vec{F}_{12}+\vec{v}_2\cdot \vec{F}_{21}
 \end{align*}
@@ -260,7 +260,7 @@ consevação (ou não) da energia cinética total dos corpos:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :height 100
-[[file:~/Dropbox/UFSCar/2025_Aulas/1002317_FisExpIMec/aulas/img/col1dapprox.png]] 
+[[file:../img/col1dapprox.png]] 
 \begin{align*}
 v_{approx} &= v_1-v_2
 \end{align*}
@@ -270,7 +270,7 @@ v_{approx} &= v_1-v_2
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_html: :scale 12
-[[file:~/Dropbox/UFSCar/2025_Aulas/1002317_FisExpIMec/aulas/img/col1dafast.png]] 
+[[file:../img/col1dafast.png]] 
 \begin{align*}
 v_{afast} &= v'_1-v'_2
 \end{align*}
