@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+<meta charset="utf-8"/>
+<title>Momento de Inércia</title>
+<meta name="author" content="Prof. Nícolas Morazotti"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h2 class="title">Momento de Inércia</h2>
+<p class="subtitle"></p> <h3 class="author">Prof. Nícolas Morazotti</h3> <h3 class="email"><a href="mailto:nicolas.morazotti@gmail.com">nicolas.morazotti@gmail.com</a></h3>
+<h3 class="date"></h3>
+</section>
+
+<section>
+<section id="slide-orgdd866b9">
+<h2 id="orgdd866b9">Introdução</h2>
+<p>
+Hoje não teremos vídeo do Universo Mecânico 😢
+</p>
+</section>
+<section id="slide-org398b85f">
+<h3 id="org398b85f">Corpos rígidos</h3>
+<ul>
+<li>Corresponde a um conceito <b><font color="Yellow">limite ideal</font></b></li>
+<li><font color="Yellow">Corpo indeformável</font></li>
+<li>Distância entre duas partículas do corpo é constante ao longo do movimento</li>
+<li>Nenhum corpo é perfeitamente rígido</li>
+
+</ul>
+</section>
+<section id="slide-org7041f61" data-auto-animate>
+<h3 id="org7041f61">Corpos rígidos em Translação</h3>
+
+<div id="org7042e58" class="figure">
+<p><img src="../img/Itr8V4.png" alt="Itr8V4.png" />
+</p>
+</div>
+<ul>
+<li>Diz-se que o movimento de um corpo rígido é de <b>translação</b> quando a
+direção de qualquer segmento que une dois pontos não se altera
+durante o movimento</li>
+
+</ul>
+</section>
+<section id="slide-orgc79524e" data-auto-animate>
+<h3 id="orgc79524e">Corpos rígidos em Translação</h3>
+
+<div id="org1d301b9" class="figure">
+<p><img src="../img/Itr8V4.png" alt="Itr8V4.png" />
+</p>
+</div>
+<ul>
+<li>Todos os pontos sofrem o mesmo deslocamento no mesmo intervalo de
+tempo</li>
+<li><b>Velocidade</b> e <b>aceleração</b> de <b>translação</b> de um corpo rígido</li>
+<li>Movimento é <b><font color="Yellow">equivalente</font></b> ao de um ponto material</li>
+
+</ul>
+</section>
+<section id="slide-org9522cac" data-auto-animate>
+<h3 id="org9522cac">Corpos rígidos em Rotação</h3>
+
+<div id="orgf53f171" class="figure">
+<p><img src="../img/giphy-2231556582.gif" alt="giphy-2231556582.gif" />
+</p>
+</div>
+</section>
+<section id="slide-orgf12bc91" data-auto-animate>
+<h3 id="orgf12bc91">Corpos rígidos em Rotação</h3>
+
+<div id="orgf57b699" class="figure">
+<p><img src="../img/corpo-rigido-rotacao.png" alt="corpo-rigido-rotacao.png" />
+</p>
+</div>
+<ul>
+<li>Em contrapartida, podemos, em vez disso, fixarmos dois pontos \(A\)
+e \(B\) de um corpo rígido, bem como todos os pontos da reta que
+passa por ambos</li>
+<li>Pontos fora de reta têm de manter sua distância a tal eixo constante</li>
+<li>\(\overline{AB}\) é chamado <font color="Yellow">eixo de rotação</font>: todas as
+partículas descrevem círclos com centro em tal eixo</li>
+<li>Giram <b>ângulos</b> iguais em mesmo <b>intervalo de tempo</b></li>
+
+</ul>
+</section>
+<section id="slide-org070d03b" data-auto-animate>
+<h3 id="org070d03b">Corpos rígidos em Rotação</h3>
+<ul>
+<li>Rotação de um corpo rígido: ponto material se move circularmente ao
+redor do eixo de rotação</li>
+<li>Única coordenada: <b><font color="Yellow">ângulo de rotação</font></b></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orge9bf0ee">
+<h2 id="orge9bf0ee">Translação e Rotação de Corpos Rígidos</h2>
+<div class="outline-text-2" id="text-orge9bf0ee">
+</div>
+</section>
+<section id="slide-org8955f3d" data-auto-animate>
+<h3 id="org8955f3d">Translação de Corpos Rígidos</h3>
+<ul>
+<li>Por terem a mesma velocidade \(v\) de translação, definimos o
+<i>momentum</i> \(p\) do sistema como \(p = Mv\)</li>
+<li>\(2^{\text{a}}\) lei de Newton:
+<ul>
+<li><font color="Yellow">\(F = \frac{\mathrm{d}p}{\mathrm{d}t} = Ma\)</font></li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgfb29d77" data-auto-animate>
+<h3 id="orgfb29d77">Translação de Corpos Rígidos</h3>
+<ul>
+<li><font color="Yellow">\(F = \frac{\mathrm{d}p}{\mathrm{d}t} = Ma\)</font></li>
+<li>Massa \(M\): inércia \(\to\) dificuldade para alterar a quantidade de movimento do corpo</li>
+<li>Quanto maior a massa, maior a força necessária para acelerá-lo</li>
+
+</ul>
+</section>
+<section id="slide-org2e35798" data-auto-animate>
+<h3 id="org2e35798">Rotação de Corpos Rígidos</h3>
+<ul>
+<li>Para descrever o movimento de rotação, descrevemos um <i>raciocínio análogo</i></li>
+<li>Da mesma maneira que tínhamos uma dada velocidade \(v\) para a
+translação, teremos uma <b><font color="Yellow">velocidade angular \(\omega\)</font></b> para a rotação</li>
+<li>No caso de rotação, <b>as velocidades \(v_i\) são distintas</b></li>
+
+</ul>
+</section>
+<section id="slide-org706ed8d" data-auto-animate>
+<h3 id="org706ed8d">Rotação de Corpos Rígidos</h3>
+<ul>
+<li>Associa-se a um corpo em rotação uma "quantidade de movimento
+angular" - formalmente chamada de <i><font color="Yellow">momentum</font></i> <font color="Yellow">angular \(L\)</font></li>
+<li>\(L = I\omega\)</li>
+<li>\(I\) é seu <b>momento de inércia</b></li>
+
+</ul>
+</section>
+<section id="slide-org6943960" data-auto-animate>
+<h3 id="org6943960">Rotação de Corpos Rígidos</h3>
+<ul>
+<li>Por analogia,
+<ul>
+<li>\(\tau = \frac{\mathrm{d}L}{\mathrm{d}t}=I\alpha\)</li>
+
+</ul></li>
+<li>\(\tau\) é o torque, \(\alpha\) é a aceleração angular</li>
+
+</ul>
+</section>
+<section id="slide-org8537da7" data-auto-animate>
+<h3 id="org8537da7">Rotação de Corpos Rígidos</h3>
+<ul>
+<li>As representações da \(2^{\text{a}}\) lei de Newton para um corpo rígido em
+translação e rotação são <b>matematicamente equivalentes</b></li>
+<li>Assim como \(M \leftrightarrow\) dificuldade de alterar \(p\), \(I
+  \leftrightarrow\) dificuldade de alterar \(L\)</li>
+
+</ul>
+</section>
+<section id="slide-orgcdec72c" data-auto-animate>
+<h3 id="orgcdec72c">Relações de grandezas</h3>
+<table border="3" cellspacing="0" cellpadding="6" rules="all" frame="border">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Grandeza</th>
+<th scope="col" class="org-left">Translação</th>
+<th scope="col" class="org-left">Rotação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Inércia</td>
+<td class="org-left">\(M\)</td>
+<td class="org-left">\(I\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Deslocamento</td>
+<td class="org-left">\(s=r\theta\)</td>
+<td class="org-left">\(\theta\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Velocidade</td>
+<td class="org-left">\(v=r\omega\)</td>
+<td class="org-left">\(\omega\)</td>
+</tr>
+
+<tr>
+<td class="org-left">Aceleração</td>
+<td class="org-left">\(a=r\alpha\)</td>
+<td class="org-left">\(\alpha\)</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Momentum</i></td>
+<td class="org-left">\(p=mv\)</td>
+<td class="org-left">\(L=I\omega\)</td>
+</tr>
+
+<tr>
+<td class="org-left">\(2^{\text{a}}\) lei de Newton</td>
+<td class="org-left">\(F = \dot{p}\)</td>
+<td class="org-left">\(\tau = \dot{L}\)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown, RevealZoom, RevealNotes],
+slideNumber:"c/t"
+});
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
