@@ -172,11 +172,91 @@ I = \int r^2 \mathrm{d}m
 \end{align*}
 O momento de inércia passa a depender da {{{yellow(geometria)}}} do
 corpo em questão.
-* Vars                                                             :noexport:
-# Local variables:
-# eval: (setq org-image-actual-width 350)
-# eval: (setq org-image-align 'center)
-# End:
+** \(I\): caso contínuo
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+[[file:../img/tSk7oX.png]]
+
+** \(I\): caso contínuo
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- Em geral, os momentos de inércia são difíceis de se calcular para
+  figuras não regulares, mas têm a forma
+  \begin{align*}
+  I &= CMr^2
+  \end{align*}
+- \(C\) depende da {{{yellow(geometria)}}} do corpo
+  
+** Teorema de Steiner
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- A definição a partir da integral é sempre válida, mas difícil de se
+  calcular, principalmente em relação a eixos arbitrários.
+- Para isso, contamos com o *{{{yellow(Teorema dos Eixos Paralelos)}}}*.
+** Teorema de Steiner
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- Se conhecemos o momento de inércia \(I_{cm}\) de um eixo que passa
+  pelo centro de massa, o momento de inércia em relação a um eixo
+  paralelo pode ser calculado
+  
+#+attr_html: :width 350
+[[file:../img/PiJLj9.png]] 
+** Teorema de Steiner
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+  
+#+attr_html: :width 300
+[[file:../img/PiJLj9.png]] 
+\begin{align*}
+I = I_{cm} + M\ell^2
+\end{align*}
+** Objetivos do Módulo 3
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- Determinar experimentalmente o momento de inércia de corpos com
+  geometrias regulares e irregulares
+** Objetivos do Módulo 3
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- Determinar experimentalmente o momento de inércia de corpos com
+  geometrias regulares e irregulares
+- Determinar experimentalmente a constante adimensional \(C\) para
+  corpos de geometria regular e compará-la com a previsão teórica para
+  a geometria esperada
+
+** Objetivos do Módulo 3
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- Determinar experimentalmente o momento de inércia de corpos com
+  geometrias regulares e irregulares
+- Determinar experimentalmente a constante adimensional \(C\) para
+  corpos de geometria regular e compará-la com a previsão teórica para
+  a geometria esperada
+- Validação do método experimental empregado visando a determinação do
+  momento de inércia de corpos com formatos arbitrários
+
+** Objetivos do Módulo 3
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+*Equipamentos disponíveis*
+- Suporte para equilíbrio de corpos
+- Corpos com diferentes massas e geometrias
+- Trena
+- Paquímetro analógico
+- Micrômetro analógico
+- Cronômetro digital
+- Balança digital de precisão
+- Tripé para filmagem
 * Vars                                                             :noexport:
 # Local variables:
 # eval: (setq org-image-actual-width 350)
