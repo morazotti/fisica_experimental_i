@@ -279,6 +279,11 @@ I = I_{cm} + M\ell^2
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
+[[file:img/JuQ1Em.png]]
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
 [[file:../img/LZjbQI.png]]
 ** O pêndulo físico
 :PROPERTIES:
