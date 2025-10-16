@@ -467,6 +467,15 @@ As soluções exatas dessa equação vêm de uma coisa chamada *integral elípti
   \end{align*}
 - Teorema de Steiner:
   \[I_{CM} = mL^2 \left( \frac{gT^2}{4\pi^2L}-1 \right)\]
+** O pêndulo físico - baixo amortecimento
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+*Equação de movimento*
+
+\(\theta(t) = \theta_0 e^{-\frac{\gamma}{2}t} \cos(\omega_{0}t+\phi)\)
+- Teorema de Steiner:
+  \[I_{CM} = mL^2 \left( \frac{gT^2}{4\pi^2L}-1 \right)\]
 * Vars                                                             :noexport:
 # Local variables:
 # eval: (setq org-image-actual-width 350)
