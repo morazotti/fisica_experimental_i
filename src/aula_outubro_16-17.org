@@ -1,8 +1,8 @@
 #+title: Momento de Inércia
 #+author: Prof. Nícolas Morazotti
 #+email: nicolas.morazotti@gmail.com
-#+setupfile: /home/nicolas/.config/emacs/macros/colors.org
-#+property: header_args:jupyter-python :eval never-export 
+#+property: header-args:jupyter-python :session /home/nicolas/.local/share/jupyter/runtime/kernel-fd06e933-64cd-4a7c-b78a-41a65c52ca94.json
+#+property: header-args:jupyter-python+ :eval never-export
 #+language: br
 #+latex_header: \usepackage[brazil]{babel}
 #+latex_header: \usepackage{minted}
@@ -10,6 +10,7 @@
 #+latex_header: \usepackage{svg}
 #+latex_header: \usemintedstyle{emacs}
 #+latex_header: \setminted[python]{framesep=1.5mm, linenos, firstnumber=last}
+#+SETUPFILE: /home/nicolas/.config/emacs/macros/colors.org
 #+options: H:2 ':t toc:nil timestamp:nil num:nil reveal_width:3840 reveal_height:2160 date:nil
 :REVEAL_PROPERTIES:
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
@@ -24,10 +25,22 @@
 #+REVEAL_MIN_SCALE: 0.5 
 #+REVEAL_MAX_SCALE: 35 
 #+REVEAL_EXTRA_CSS: custom.css
-#+REVEAL_EXTRA_SCRIPT_SRC: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 :END:
-    
+#+REVEAL_INIT_SCRIPT: <script> Reveal.on('ready', function() {if (window.MathJax) MathJax.typesetPromise();}); Reveal.on('slidechanged', function() {if (window.MathJax) MathJax.typesetPromise();}); </script>
+#+REVEAL_MATHJAX_URL: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+#+REVEAL_MATHJAX: t
+#+REVEAL_EXTRA_JS: https://cdn.plot.ly/plotly-latest.min.js
+#+SETUPFILE: /home/nicolas/.config/emacs/macros/plotly.org
+#+MACRO: plotly @@html:<div id="$1"></div><script> fetch("$2") .then(r => r.json()) .then(fig => {Plotly.newPlot("$1", fig.data, fig.layout, {frames: fig.frames || []}); if (window.MathJax) MathJax.typesetPromise();}); </script>@@
 
+  #+begin_src jupyter-python :exports none
+    import numpy as np
+    import plotly.express as px
+    import plotly.graph_objects as go
+    import plotly.io as pio
+
+    theta = np.linspace(0, np.pi/2, 100)
+  #+end_src
 * Introdução 
 
 Hoje não teremos vídeo do Universo Mecânico 😢
@@ -257,6 +270,198 @@ I = I_{cm} + M\ell^2
 - Cronômetro digital
 - Balança digital de precisão
 - Tripé para filmagem
+
+  
+** Sistema girante
+[[file:../img/9Mgc3J.png]] 
+
+* O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+[[file:../img/LZjbQI.png]]
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 200
+[[file:../img/LZjbQI.png]]
+- Pêndulo físico de massa \(m\), momento de inércia \(I\) ao redor do pivô \(O\)
+- Centro de massa está a \(L\) de \(O\)
+- Quando oscila, deslocamento dado pelo ângulo {{{yellow(\(\theta\))}}}
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_html: :width 200
+[[file:../img/LZjbQI.png]]
+- Na posição indicada pela figura, *{{{yellow(torque restaurador \(\tau\))}}}*
+  + \(\tau = r_{\perp} F = -L [mg\sin(\theta)]\)
+- Direção positiva se afasta da vertical
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- \(\tau = r_{\perp} F = -L [mg\sin(\theta)]\)
+  
+- \(2^{\text{a}}\) lei de Newton para rotações:
+  + \(\tau_R = \dot{L} = I\alpha = I \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\)
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+Unimos as equações
+- \(\tau = r_{\perp} F = -L [mg\sin(\theta)]\)
+- \(\tau_R = \dot{L} = I\alpha = I \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\)
+  em
+- \(I \ddot{\theta} = - mgL \sin(\theta)\)
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_reveal: :frag (none none none appear) :frag_idx (1 2 3 4)
++ \(I \ddot{\theta} = - mgL \sin(\theta)\)
++ \(I \ddot{\theta} + mgL \sin(\theta) = 0\)
++ \(\ddot{\theta} + \frac{mgL}{I} \sin(\theta) = 0\)
++ ⚠️ *{{{yellow(COMPLICADO)}}}* ⚠️
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+#+attr_reveal: :frag (none none none appear) :frag_idx (1 2 3 4)
+- \(\ddot{\theta} + \frac{mgL}{I} \sin(\theta) = 0\)
+As soluções exatas dessa equação vêm de uma coisa chamada *integral elíptica*
+- Por sorte, podemos utilizar a expansão
+  + \(\sin(\theta)\approx\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\dots\)
+
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- \(\sin(\theta)\approx\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\dots\)
+
+  #+begin_src jupyter-python :exports none
+    import numpy as np
+    import plotly.express as px
+    import plotly.graph_objects as go
+    import plotly.io as pio
+
+    theta = np.linspace(0, np.pi/2, 100)
+  #+end_src
+
+  #+RESULTS:
+
+#+begin_src jupyter-python :results output :file "img/sin_theta_vs_theta.html" :exports none
+  p = go.Figure()
+  p.add_trace(go.Scatter(x=theta, y=np.sin(theta), mode='lines', name='sin θ'))
+  p.add_trace(go.Scatter(x=theta, y=theta, mode='lines', name='θ'))
+  p.add_trace(go.Scatter(x=theta, y=theta - theta**3/6, mode='lines', name='θ -  θ^3/6'))
+  p.update_layout(
+      title="Respostas do seno em função do ângulo",
+      xaxis_title="Ângulo (rad)",
+      legend=dict(
+          x=1.02,   # ligeiramente fora da área principal
+          y=0.5,
+          xanchor='left',
+          yanchor='middle',
+          bgcolor='rgba(255,255,255,0.6)',
+          font=dict(size=16),
+      ),
+      margin=dict(r=100),  # 🔹 adiciona margem à direita
+  )
+  # salva o gráfico como HTML interativo independente
+  pio.write_html(p, file="img/sin_theta_vs_theta.html", include_plotlyjs='cdn', full_html=False)
+#+end_src
+
+#+RESULTS:
+#+REVEAL_HTML: <iframe src="../img/sin_theta_vs_theta.html" width="800" height="500"></iframe>
+
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+- Com a aproximação \(\sin(\theta)\approx\theta\), para
+  \(\theta<6^{\circ}\), temos
+#+attr_reveal: :frag (none appear appear appear) :frag_idx (1 2 3 4)
+  + \(\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} + \omega_0^2\theta = 0\)
+  + \(\omega_{0} = \sqrt{\frac{mgL}{I}}\)
+  + \(\omega_0 = \frac{2\pi}{T}\)
+  + \(T = 2\pi \sqrt{\frac{I}{mgL}}\)
+    
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+*Equação de movimento*    
+
+\(\theta(t) = \theta_0\cos(\omega_0t+\phi)\)
+#+begin_src jupyter-python :results output :file "img/multiple_phi_slider.html" :exports none
+  t = np.linspace(0, 5, 1000)
+  w0 = 2*np.pi
+  theta = w0*t
+
+  phi_steps = np.linspace(0, np.pi, 3)
+
+  p = go.Figure()
+  for phi in phi_steps:
+      p.add_trace(go.Scatter(x=theta, y=np.cos(theta + phi), mode='lines', name=f'phi={phi}'))
+
+  p.update_layout(
+    title="θ(t) variando a fase",
+    xaxis_title="Tempo (s)",
+    legend=dict(
+        x=1.02,   # ligeiramente fora da área principal
+        y=0.5,
+        xanchor='left',
+        yanchor='middle',
+        bgcolor='rgba(255,255,255,0.6)',
+        font=dict(size=16),
+    ),
+    margin=dict(r=100),  # 🔹 adiciona margem à direita
+  )
+  pio.write_html(p, file="img/multiple_phi_slider.html", include_plotlyjs='cdn', full_html=True)
+#+end_src
+
+#+RESULTS:
+
+#+REVEAL_HTML: <iframe src="../img/multiple_phi_slider.html" width="900" height="500"></iframe>
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+*Equação de movimento*
+
+\(\theta(t) = \theta_0\cos(\omega_0t+\phi)\)
+- Solução harmônica, movimento de período \(T = 2\pi/\omega_0\)
+- Uma análise mais realista mostra que a amplitude \(\theta_0\) é
+  mantida constante durante um breve período de tempo de oscilação
+- Há dissipação de energia durante o movimento
+
+** O pêndulo físico
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+*Equação de movimento*
+
+\(\theta(t) = \theta_0 e^{-\frac{\gamma}{2}t} \cos(\omega't+\phi)\)
+- \(\gamma\) denota perdas por atrito
+- \(\omega' = \sqrt{\omega_0^2 - \frac{\gamma^2}{4}}\) é a frequência amortecida
+- Se \(\gamma\) é muito pequeno \(10^{-4}\), \(\omega'\approx\omega_0\)
+** O pêndulo físico - baixo amortecimento
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: data-auto-animate
+:END:
+*Equação de movimento*
+
+\(\theta(t) = \theta_0 e^{-\frac{\gamma}{2}t} \cos(\omega_{0}t+\phi)\)
+- A partir da determinação do período de oscilação, pode-se determinar
+  experimentalmente o momento de inércia do corpo no eixo de rotação
+  do pivô:
+  \begin{align*}
+  I= \frac{mgLT^{2}}{4\pi^2}
+  \end{align*}
+- Teorema de Steiner:
+  \[I_{CM} = mL^2 \left( \frac{gT^2}{4\pi^2L}-1 \right)\]
 * Vars                                                             :noexport:
 # Local variables:
 # eval: (setq org-image-actual-width 350)
