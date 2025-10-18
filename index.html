@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-10-14 Tue 16:12 -->
+<!-- 2025-10-17 Fri 21:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -21,10 +21,12 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script>
   window.MathJax = {
+    loader: {load: ['[tex]/physics']},
     tex: {
       ams: {
         multlineWidth: '85%'
       },
+      packages: {'[+]': ['physics']},
       tags: 'ams',
       tagSide: 'right',
       tagIndent: '.8em'
@@ -39,6 +41,7 @@
       displayAlign: 'center',
       displayIndent: '0em'
     },
+    extensions: ["[Contrib]/physics/physics.js"],
     output: {
       font: 'mathjax-modern',
       displayOverflow: 'overflow'
@@ -58,16 +61,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge4ef353">Instruções</a></li>
-<li><a href="#org6d551e9">Módulo 1 - Transformação e Conservação de Energia Mecânica</a></li>
-<li><a href="#org4c70466">Módulo 2 - Conservação do <i>Momentum</i> Linear</a></li>
-<li><a href="#org5338b92">Módulo 3 - Momento de Inércia</a></li>
+<li><a href="#org465a849">Instruções</a></li>
+<li><a href="#org9e57264">Módulo 1 - Transformação e Conservação de Energia Mecânica</a></li>
+<li><a href="#org732fdf5">Módulo 2 - Conservação do <i>Momentum</i> Linear</a></li>
+<li><a href="#orgc5ff1af">Módulo 3 - Momento de Inércia</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orge4ef353" class="outline-2">
-<h2 id="orge4ef353">Instruções</h2>
-<div class="outline-text-2" id="text-orge4ef353">
+<div id="outline-container-org465a849" class="outline-2">
+<h2 id="org465a849">Instruções</h2>
+<div class="outline-text-2" id="text-org465a849">
 <p>
 Os slides das aulas utilizam <a href="https://revealjs.com">reveal.js</a>. Por isso, eles podem não ser
 muito intuitivos em seu uso. Sempre que utilizar, clique <code>N</code> para
@@ -76,9 +79,9 @@ avançar para o próximo slide, <code>P</code> para retornar ao slide anterior e
 </p>
 </div>
 </div>
-<div id="outline-container-org6d551e9" class="outline-2">
-<h2 id="org6d551e9">Módulo 1 - Transformação e Conservação de Energia Mecânica</h2>
-<div class="outline-text-2" id="text-org6d551e9">
+<div id="outline-container-org9e57264" class="outline-2">
+<h2 id="org9e57264">Módulo 1 - Transformação e Conservação de Energia Mecânica</h2>
+<div class="outline-text-2" id="text-org9e57264">
 <p>
 <a href="src/aula_setembro_11-12.html">[slides] </a>
 </p>
@@ -115,30 +118,30 @@ altura inicial e ângulo do plano inclinado, e ver a transformação de
 energia no sistema envolvido.
 </p>
 <div class="org-src-container">
-<pre class="src src-jupyter-python"><span style="color: #bb9af7;">import</span> numpy <span style="color: #bb9af7;">as</span> np
-<span style="color: #bb9af7;">import</span> matplotlib.pyplot <span style="color: #bb9af7;">as</span> plt
-<span style="color: #bb9af7;">import</span> plotly.express <span style="color: #bb9af7;">as</span> px
-<span style="color: #bb9af7;">import</span> plotly.graph_objects <span style="color: #bb9af7;">as</span> go
-<span style="color: #bb9af7;">import</span> plotly.io <span style="color: #bb9af7;">as</span> pio
+<pre class="src src-jupyter-python"><span style="color: #8839ef;">import</span> numpy <span style="color: #8839ef;">as</span> np
+<span style="color: #8839ef;">import</span> matplotlib.pyplot <span style="color: #8839ef;">as</span> plt
+<span style="color: #8839ef;">import</span> plotly.express <span style="color: #8839ef;">as</span> px
+<span style="color: #8839ef;">import</span> plotly.graph_objects <span style="color: #8839ef;">as</span> go
+<span style="color: #8839ef;">import</span> plotly.io <span style="color: #8839ef;">as</span> pio
 
-<span style="color: #c0caf5;">ergs2J</span> = 1e-7 <span style="color: #51587a;"># </span><span style="color: #51587a;">converte energia para o SI 
-</span><span style="color: #c0caf5;">m</span> = 407.2 <span style="color: #51587a;"># </span><span style="color: #51587a;">g
-</span><span style="color: #c0caf5;">g</span> = 978.5 <span style="color: #51587a;"># </span><span style="color: #51587a;">cm/s^2
-</span><span style="color: #c0caf5;">theta</span> = np.pi/6 <span style="color: #51587a;"># </span><span style="color: #51587a;">30&#176;
-</span><span style="color: #c0caf5;">y0</span>, <span style="color: #c0caf5;">v0y</span> = 20, 0 <span style="color: #51587a;"># </span><span style="color: #51587a;">cm, cm/s
-</span><span style="color: #c0caf5;">x0</span>, <span style="color: #c0caf5;">v0x</span> = 20/np.tan<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>, 0
-<span style="color: #c0caf5;">t</span> = np.linspace<span style="color: #a9b1d6;">(</span>0, np.sqrt<span style="color: #7aa2f7;">(</span>2*y0/<span style="color: #ff9e64;">(</span>g*np.sin<span style="color: #73daca;">(</span>theta<span style="color: #73daca;">)</span>**2<span style="color: #ff9e64;">)</span><span style="color: #7aa2f7;">)</span>, 100<span style="color: #a9b1d6;">)</span>
-<span style="color: #c0caf5;">h</span> = y0 + v0y*t - g*np.sin<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>**2*t**2/2
-<span style="color: #c0caf5;">x</span> = h/np.tan<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>
+<span style="color: #d20f39;">ergs2J</span> = 1e-7 <span style="color: #bcc0cc;"># </span><span style="color: #bcc0cc;">converte energia para o SI 
+</span><span style="color: #d20f39;">m</span> = 407.2 <span style="color: #bcc0cc;"># </span><span style="color: #bcc0cc;">g
+</span><span style="color: #d20f39;">g</span> = 978.5 <span style="color: #bcc0cc;"># </span><span style="color: #bcc0cc;">cm/s^2
+</span><span style="color: #d20f39;">theta</span> = np.pi/6 <span style="color: #bcc0cc;"># </span><span style="color: #bcc0cc;">30&#176;
+</span><span style="color: #d20f39;">y0</span>, <span style="color: #d20f39;">v0y</span> = 20, 0 <span style="color: #bcc0cc;"># </span><span style="color: #bcc0cc;">cm, cm/s
+</span><span style="color: #d20f39;">x0</span>, <span style="color: #d20f39;">v0x</span> = 20/np.tan<span style="color: #8839ef;">(</span>theta<span style="color: #8839ef;">)</span>, 0
+<span style="color: #d20f39;">t</span> = np.linspace<span style="color: #8839ef;">(</span>0, np.sqrt<span style="color: #1e66f5;">(</span>2*y0/<span style="color: #179299;">(</span>g*np.sin<span style="color: #40a02b;">(</span>theta<span style="color: #40a02b;">)</span>**2<span style="color: #179299;">)</span><span style="color: #1e66f5;">)</span>, 100<span style="color: #8839ef;">)</span>
+<span style="color: #d20f39;">h</span> = y0 + v0y*t - g*np.sin<span style="color: #8839ef;">(</span>theta<span style="color: #8839ef;">)</span>**2*t**2/2
+<span style="color: #d20f39;">x</span> = h/np.tan<span style="color: #8839ef;">(</span>theta<span style="color: #8839ef;">)</span>
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-jupyter-python"><span style="color: #c0caf5;">U</span> = m*g*h*ergs2J
-<span style="color: #c0caf5;">vx</span> = v0x - g*np.cos<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>*np.sin<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>*t
-<span style="color: #c0caf5;">vy</span> = v0y - g*np.sin<span style="color: #a9b1d6;">(</span>theta<span style="color: #a9b1d6;">)</span>**2*t
-<span style="color: #c0caf5;">v2</span> = vx*vx + vy*vy
-<span style="color: #c0caf5;">K</span> = m*v2*ergs2J/2
+<pre class="src src-jupyter-python"><span style="color: #d20f39;">U</span> = m*g*h*ergs2J
+<span style="color: #d20f39;">vx</span> = v0x - g*np.cos<span style="color: #8839ef;">(</span>theta<span style="color: #8839ef;">)</span>*np.sin<span style="color: #8839ef;">(</span>theta<span style="color: #8839ef;">)</span>*t
+<span style="color: #d20f39;">vy</span> = v0y - g*np.sin<span style="color: #8839ef;">(</span>theta<span style="color: #8839ef;">)</span>**2*t
+<span style="color: #d20f39;">v2</span> = vx*vx + vy*vy
+<span style="color: #d20f39;">K</span> = m*v2*ergs2J/2
 </pre>
 </div>
 
@@ -157,9 +160,9 @@ cinético.
 </p>
 </div>
 </div>
-<div id="outline-container-org4c70466" class="outline-2">
-<h2 id="org4c70466">Módulo 2 - Conservação do <i>Momentum</i> Linear</h2>
-<div class="outline-text-2" id="text-org4c70466">
+<div id="outline-container-org732fdf5" class="outline-2">
+<h2 id="org732fdf5">Módulo 2 - Conservação do <i>Momentum</i> Linear</h2>
+<div class="outline-text-2" id="text-org732fdf5">
 <p>
 <a href="src/aula_setembro_25-26.html">[slides]​</a>
 </p>
@@ -170,17 +173,27 @@ Nesta aula, estudamos, com auxílio de uma FlatBall, a conservação do
 </p>
 </div>
 </div>
-<div id="outline-container-org5338b92" class="outline-2">
-<h2 id="org5338b92">Módulo 3 - Momento de Inércia</h2>
-<div class="outline-text-2" id="text-org5338b92">
+<div id="outline-container-orgc5ff1af" class="outline-2">
+<h2 id="orgc5ff1af">Módulo 3 - Momento de Inércia</h2>
+<div class="outline-text-2" id="text-orgc5ff1af">
 <p>
 <a href="src/aula_outubro_16-17.html">[slides]​</a>
+</p>
+
+<p>
+Na prática, aproximamos a função horária proposta para
+</p>
+\begin{align*}
+\theta(t) = \theta(0) e^{-\frac{\gamma}{2}t}\cos(\omega_0t+\phi),
+\end{align*}
+<p>
+válida para o regime de amortecimento subcrítico, em que \(\gamma \ll 2\omega_0\).
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2025-10-14 Tue 16:12</p>
+<p class="date">Created: 2025-10-17 Fri 21:36</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

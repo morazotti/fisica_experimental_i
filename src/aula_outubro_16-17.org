@@ -337,7 +337,7 @@ Unimos as equações
 - \(\ddot{\theta} + \frac{mgL}{I} \sin(\theta) = 0\)
 As soluções exatas dessa equação vêm de uma coisa chamada *integral elíptica*
 - Por sorte, podemos utilizar a expansão
-  + \(\sin(\theta)\approx\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\dots\)
+  + \(\sin(\theta)=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\cdots\)
 
 ** O pêndulo físico
 :PROPERTIES:
@@ -480,4 +480,5 @@ As soluções exatas dessa equação vêm de uma coisa chamada *integral elípti
 # Local variables:
 # eval: (setq org-image-actual-width 350)
 # eval: (setq org-image-align 'center)
+# eval: (load-library "ox-reveal")
 # End:

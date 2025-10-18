@@ -134,3 +134,10 @@ Nesta aula, estudamos, com auxílio de uma FlatBall, a conservação do
 
 * Módulo 3 - Momento de Inércia
 [[file:src/aula_outubro_16-17.html][[slides]​]]
+
+Na prática, aproximamos a função horária proposta para
+\begin{align*}
+\theta(t) = \theta(0) e^{-\frac{\gamma}{2}t}\cos(\omega_0t+\phi),
+\end{align*}
+válida para o regime de amortecimento subcrítico, em que \(\gamma \ll 2\omega_0\).
+
