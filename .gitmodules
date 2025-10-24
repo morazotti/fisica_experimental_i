@@ -1,0 +1,3 @@
+[submodule "aula-ohs"]
+	path = concurso-ufscar
+	url = git@github.com:morazotti/concurso-ufscar.git

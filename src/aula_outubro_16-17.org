@@ -292,7 +292,7 @@ I = I_{cm} + M\ell^2
 #+attr_html: :width 200
 [[file:../img/LZjbQI.png]]
 - Pêndulo físico de massa \(m\), momento de inércia \(I\) ao redor do pivô \(O\)
-- Centro de massa está a \(L\) de \(O\)
+- Centro de massa está a \(\ell\) de \(O\)
 - Quando oscila, deslocamento dado pelo ângulo {{{yellow(\(\theta\))}}}
 ** O pêndulo físico
 :PROPERTIES:
@@ -301,40 +301,40 @@ I = I_{cm} + M\ell^2
 #+attr_html: :width 200
 [[file:../img/LZjbQI.png]]
 - Na posição indicada pela figura, *{{{yellow(torque restaurador \(\tau\))}}}*
-  + \(\tau = r_{\perp} F = -L [mg\sin(\theta)]\)
+  + \(\tau = r_{\perp} F = -\ell [mg\sin(\theta)]\)
 - Direção positiva se afasta da vertical
 ** O pêndulo físico
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
-- \(\tau = r_{\perp} F = -L [mg\sin(\theta)]\)
+- \(\tau = r_{\perp} F = -\ell [mg\sin(\theta)]\)
   
 - \(2^{\text{a}}\) lei de Newton para rotações:
-  + \(\tau_R = \dot{\ell} = I\alpha = I \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\)
+  + \(\tau_R = \dot{L} = I\alpha = I \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\)
 ** O pêndulo físico
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 Unimos as equações
-- \(\tau = r_{\perp} F = -L [mg\sin(\theta)]\)
-- \(\tau_R = \dot{\ell} = I\alpha = I \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\)
+- \(\tau = r_{\perp} F = -\ell [mg\sin(\theta)]\)
+- \(\tau_R = \dot{L} = I\alpha = I \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\)
   em
-- \(I \ddot{\theta} = - mgL \sin(\theta)\)
+- \(I \ddot{\theta} = - mg\ell \sin(\theta)\)
 ** O pêndulo físico
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_reveal: :frag (none none none appear) :frag_idx (1 2 3 4)
-+ \(I \ddot{\theta} = - mgL \sin(\theta)\)
-+ \(I \ddot{\theta} + mgL \sin(\theta) = 0\)
-+ \(\ddot{\theta} + \frac{mgL}{I} \sin(\theta) = 0\)
++ \(I \ddot{\theta} = - mg\ell \sin(\theta)\)
++ \(I \ddot{\theta} + mg\ell \sin(\theta) = 0\)
++ \(\ddot{\theta} + \frac{mg\ell}{I} \sin(\theta) = 0\)
 + ⚠️ *{{{yellow(COMPLICADO)}}}* ⚠️
 ** O pêndulo físico
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 #+attr_reveal: :frag (none none none appear) :frag_idx (1 2 3 4)
-- \(\ddot{\theta} + \frac{mgL}{I} \sin(\theta) = 0\)
+- \(\ddot{\theta} + \frac{mg\ell}{I} \sin(\theta) = 0\)
 As soluções exatas dessa equação vêm de uma coisa chamada *integral elíptica*
 - Por sorte, podemos utilizar a expansão
   + \(\sin(\theta)=\theta-\frac{\theta^3}{3!}+\frac{\theta^5}{5!}-\cdots\)
@@ -389,9 +389,9 @@ As soluções exatas dessa equação vêm de uma coisa chamada *integral elípti
   \(\theta<6^{\circ}\), temos
 #+attr_reveal: :frag (none appear appear appear) :frag_idx (1 2 3 4)
   + \(\frac{\mathrm{d}^2\theta}{\mathrm{d}t^2} + \omega_0^2\theta = 0\)
-  + \(\omega_{0} = \sqrt{\frac{mgL}{I}}\)
+  + \(\omega_{0} = \sqrt{\frac{mg\ell}{I}}\)
   + \(\omega_0 = \frac{2\pi}{T}\)
-  + \(T = 2\pi \sqrt{\frac{I}{mgL}}\)
+  + \(T = 2\pi \sqrt{\frac{I}{mg\ell}}\)
     
 ** O pêndulo físico
 :PROPERTIES:
@@ -463,10 +463,10 @@ As soluções exatas dessa equação vêm de uma coisa chamada *integral elípti
   experimentalmente o momento de inércia do corpo no eixo de rotação
   do pivô:
   \begin{align*}
-  I= \frac{mgLT^{2}}{4\pi^2}
+  I= \frac{mg\ell T^{2}}{4\pi^2}
   \end{align*}
 - Teorema de Steiner:
-  \[I_{CM} = mL^2 \left( \frac{gT^2}{4\pi^2L}-1 \right)\]
+  \[I_{CM} = m\ell^2 \left( \frac{gT^2}{4\pi^2\ell}-1 \right)\]
 ** O pêndulo físico - baixo amortecimento
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
@@ -475,7 +475,7 @@ As soluções exatas dessa equação vêm de uma coisa chamada *integral elípti
 
 \(\theta(t) = \theta_0 e^{-\frac{\gamma}{2}t} \cos(\omega_{0}t+\phi)\)
 - Teorema de Steiner:
-  \[I_{CM} = mL^2 \left( \frac{gT^2}{4\pi^2L}-1 \right)\]
+  \[I_{CM} = m\ell^2 \left( \frac{gT^2}{4\pi^2\ell}-1 \right)\]
 * Vars                                                             :noexport:
 # Local variables:
 # eval: (setq org-image-actual-width 350)

@@ -140,3 +140,8 @@ Na prática, aproximamos a função horária proposta para
 \theta(t) = \theta(0) e^{-\frac{\gamma}{2}t}\cos(\omega_0t+\phi),
 \end{align*}
 válida para o regime de amortecimento subcrítico, em que \(\gamma \ll 2\omega_0\).
+
+** Extra: aula de oscilador harmônico
+[[file:concurso-ufscar/aula.html][[slides]​]]
+Nestes slides, temos uma aula sobre oscilação harmônica, caso tenha
+ficado alguma dúvida.
