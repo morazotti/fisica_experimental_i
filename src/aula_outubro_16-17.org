@@ -310,14 +310,14 @@ I = I_{cm} + M\ell^2
 - \(\tau = r_{\perp} F = -L [mg\sin(\theta)]\)
   
 - \(2^{\text{a}}\) lei de Newton para rotações:
-  + \(\tau_R = \dot{L} = I\alpha = I \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\)
+  + \(\tau_R = \dot{\ell} = I\alpha = I \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\)
 ** O pêndulo físico
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: data-auto-animate
 :END:
 Unimos as equações
 - \(\tau = r_{\perp} F = -L [mg\sin(\theta)]\)
-- \(\tau_R = \dot{L} = I\alpha = I \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\)
+- \(\tau_R = \dot{\ell} = I\alpha = I \frac{\mathrm{d}^2\theta}{\mathrm{d}t^2}\)
   em
 - \(I \ddot{\theta} = - mgL \sin(\theta)\)
 ** O pêndulo físico
