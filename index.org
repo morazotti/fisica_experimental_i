@@ -92,8 +92,8 @@ cinético.
   beta = 0.8
   p = go.Figure()
   p.add_trace(go.Scatter(x=t, y=U, mode='lines', name='Energia Potencial Gravitacional'))
-  p.add_trace(go.Scatter(x=t, y=0.8*K, mode='lines', name='Energia Cinética'))
-  p.add_trace(go.Scatter(x=t, y=U+0.8*K, mode='lines', name='Energia Mecânica'))
+  p.add_trace(go.Scatter(x=t, y=beta*K, mode='lines', name='Energia Cinética'))
+  p.add_trace(go.Scatter(x=t, y=U+beta*K, mode='lines', name='Energia Mecânica'))
   p.update_layout(
       title="Energias do sistema com atrito",
       xaxis_title="Tempo (s)",
