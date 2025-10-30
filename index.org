@@ -11,6 +11,15 @@ muito intuitivos em seu uso. Sempre que utilizar, clique =N= para
 avançar para o próximo slide, =P= para retornar ao slide anterior e
 =O= para ver a estrutura de slides.
 
+Para utilizar os códigos aqui presentes, preparei o ambiente virtual
+com o [[file:pyproject.toml][pyproject.toml]], presente no [[https://github.com/morazotti/fisica_experimental_i][github da disciplina]]. Para
+utilizá-lo, copie o arquivo para um diretório local, instale [[https://docs.astral.sh/uv/][uv]] em
+seu computador e execute ~uv sync~. Isso criará um diretório local
+=.venv=, com um ambiente virtual. Para ativá-lo, basta utilizar
+=source .venv/bin/activate=. Pronto, lá teremos todas as ferramentas
+presentes nos códigos apresentados.
+
+
 * Módulo 1 - Transformação e Conservação de Energia Mecânica
 [[file:src/aula_setembro_11-12.html][[slides] ]]
 
