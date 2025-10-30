@@ -65,7 +65,7 @@ energia no sistema envolvido.
 
 #+RESULTS:
 
-#+begin_src jupyter-python :results output :file "img/energia_mecanica_ideal.json" :exports results
+#+begin_src jupyter-python :results output :file "img/energia_mecanica_ideal.json" :exports both
   p = go.Figure()
   p.add_trace(go.Scatter(x=t, y=U, mode='lines', name='Energia Potencial Gravitacional'))
   p.add_trace(go.Scatter(x=t, y=K, mode='lines', name='Energia Cinética'))
@@ -88,7 +88,7 @@ cinético.
 # A aceleração, em cada ângulo associado, temos
 
 
-#+begin_src jupyter-python :results output :file "img/energia_mecanica_beta.json" :exports results
+#+begin_src jupyter-python :results output :file "img/energia_mecanica_beta.json" :exports both
   beta = 0.8
   p = go.Figure()
   p.add_trace(go.Scatter(x=t, y=U, mode='lines', name='Energia Potencial Gravitacional'))
@@ -143,5 +143,6 @@ válida para o regime de amortecimento subcrítico, em que \(\gamma \ll 2\omega_
 
 ** Extra: aula de oscilador harmônico
 [[file:concurso-ufscar/aula.html][[slides]​]]
+
 Nestes slides, temos uma aula sobre oscilação harmônica, caso tenha
 ficado alguma dúvida.
