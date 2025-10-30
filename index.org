@@ -1,7 +1,7 @@
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
 #+SETUPFILE: /home/nicolas/.config/emacs/macros/plotly.org
 #+SETUPFILE: /home/nicolas/.config/emacs/macros/colors.org
-#+property: header-args:jupyter-python :session /home/nicolas/.local/share/jupyter/runtime/kernel-d7acd899-2326-4b18-8b87-dac4c82c8c18.json
+#+property: header-args:jupyter-python :session /home/nicolas/.local/share/jupyter/runtime/kernel-e3c40edf-2b2a-4da6-8738-d6790c55b3f4.json
 #+property: header-args:jupyter-python+ :eval never-export
 #+options: num:nil
 
@@ -83,13 +83,23 @@ energia no sistema envolvido.
       xaxis_title="Tempo (s)",
       yaxis_title="Energia (J)",
   )
+#+end_src
+
+#+begin_src jupyter-python :results output :file "img/energia_mecanica_ideal.html" :exports code
+  p.write_html("img/energia_mecanica_ideal.html")
+#+end_src
+#+RESULTS:
+
+
+#+begin_src jupyter-python :results output :file "img/energia_mecanica_ideal.json" :exports none
   with open("img/energia_mecanica_ideal.json", "w") as f:
       f.write(p.to_json())
 #+end_src
-
 #+RESULTS:
 
 {{{plotly(energia_mecanica_ideal,img/energia_mecanica_ideal.json)}}}
+
+
 
 No caso real, há uma perda de energia mecânica devido ao atrito
 cinético.
@@ -107,6 +117,17 @@ cinético.
       xaxis_title="Tempo (s)",
       yaxis_title="Energia (J)",
   )
+#+end_src
+
+
+#+begin_src jupyter-python :results output :file "img/energia_mecanica_beta.html" :exports code
+  p.write_html("img/energia_mecanica_beta.html")
+#+end_src
+
+#+RESULTS:
+
+
+#+begin_src jupyter-python :results output :file "img/energia_mecanica_beta.json" :exports results
   with open("img/energia_mecanica_beta.json", "w") as f:
       f.write(p.to_json())
 #+end_src

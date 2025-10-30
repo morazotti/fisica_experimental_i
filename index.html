@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-10-30 Thu 16:45 -->
+<!-- 2025-10-30 Thu 17:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -61,20 +61,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orga5de862">Instruções</a></li>
-<li><a href="#org81b091c">Módulo 1 - Transformação e Conservação de Energia Mecânica</a></li>
-<li><a href="#orgf101a06">Módulo 2 - Conservação do <i>Momentum</i> Linear</a></li>
-<li><a href="#orgeca1d05">Módulo 3 - Momento de Inércia</a>
+<li><a href="#org9e029f9">Instruções</a></li>
+<li><a href="#org5536e49">Módulo 1 - Transformação e Conservação de Energia Mecânica</a></li>
+<li><a href="#orga89b314">Módulo 2 - Conservação do <i>Momentum</i> Linear</a></li>
+<li><a href="#org1ce18d5">Módulo 3 - Momento de Inércia</a>
 <ul>
-<li><a href="#orgd1079c0">Extra: aula de oscilador harmônico</a></li>
+<li><a href="#org197efbf">Extra: aula de oscilador harmônico</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orga5de862" class="outline-2">
-<h2 id="orga5de862">Instruções</h2>
-<div class="outline-text-2" id="text-orga5de862">
+<div id="outline-container-org9e029f9" class="outline-2">
+<h2 id="org9e029f9">Instruções</h2>
+<div class="outline-text-2" id="text-org9e029f9">
 <p>
 Os slides das aulas utilizam <a href="https://revealjs.com">reveal.js</a>. Por isso, eles podem não ser
 muito intuitivos em seu uso. Sempre que utilizar, clique <code>N</code> para
@@ -93,9 +93,9 @@ presentes nos códigos apresentados.
 </p>
 </div>
 </div>
-<div id="outline-container-org81b091c" class="outline-2">
-<h2 id="org81b091c">Módulo 1 - Transformação e Conservação de Energia Mecânica</h2>
-<div class="outline-text-2" id="text-org81b091c">
+<div id="outline-container-org5536e49" class="outline-2">
+<h2 id="org5536e49">Módulo 1 - Transformação e Conservação de Energia Mecânica</h2>
+<div class="outline-text-2" id="text-org5536e49">
 <p>
 <a href="src/aula_setembro_11-12.html">[slides] </a>
 </p>
@@ -168,14 +168,20 @@ p.update_layout<span style="color: #8839ef;">(</span>
     xaxis_title=<span style="color: #40a02b;">"Tempo (s)"</span>,
     yaxis_title=<span style="color: #40a02b;">"Energia (J)"</span>,
 <span style="color: #8839ef;">)</span>
-<span style="color: #8839ef;">with</span> <span style="color: #179299;">open</span><span style="color: #8839ef;">(</span><span style="color: #40a02b;">"img/energia_mecanica_ideal.json"</span>, <span style="color: #40a02b;">"w"</span><span style="color: #8839ef;">)</span> <span style="color: #8839ef;">as</span> f:
-    f.write<span style="color: #8839ef;">(</span>p.to_json<span style="color: #1e66f5;">()</span><span style="color: #8839ef;">)</span>
 </pre>
 </div>
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python">p.write_html<span style="color: #8839ef;">(</span><span style="color: #40a02b;">"img/energia_mecanica_ideal.html"</span><span style="color: #8839ef;">)</span>
+</pre>
+</div>
+
 
 <p>
 <div id="energia_mecanica_ideal"></div><script> fetch("img/energia_mecanica_ideal.json")  .then(r => r.json())  .then(fig => Plotly.newPlot("energia_mecanica_ideal", fig.data, fig.layout, {frames: fig.frames || []}));  </script>
 </p>
+
+
 
 <p>
 No caso real, há uma perda de energia mecânica devido ao atrito
@@ -194,19 +200,24 @@ p.update_layout<span style="color: #8839ef;">(</span>
     xaxis_title=<span style="color: #40a02b;">"Tempo (s)"</span>,
     yaxis_title=<span style="color: #40a02b;">"Energia (J)"</span>,
 <span style="color: #8839ef;">)</span>
-<span style="color: #8839ef;">with</span> <span style="color: #179299;">open</span><span style="color: #8839ef;">(</span><span style="color: #40a02b;">"img/energia_mecanica_beta.json"</span>, <span style="color: #40a02b;">"w"</span><span style="color: #8839ef;">)</span> <span style="color: #8839ef;">as</span> f:
-    f.write<span style="color: #8839ef;">(</span>p.to_json<span style="color: #1e66f5;">()</span><span style="color: #8839ef;">)</span>
 </pre>
 </div>
+
+
+<div class="org-src-container">
+<pre class="src src-jupyter-python">p.write_html<span style="color: #8839ef;">(</span><span style="color: #40a02b;">"img/energia_mecanica_beta.html"</span><span style="color: #8839ef;">)</span>
+</pre>
+</div>
+
 
 <p>
 <div id="energia_mecanica_beta"></div><script> fetch("img/energia_mecanica_beta.json")  .then(r => r.json())  .then(fig => Plotly.newPlot("energia_mecanica_beta", fig.data, fig.layout, {frames: fig.frames || []}));  </script>
 </p>
 </div>
 </div>
-<div id="outline-container-orgf101a06" class="outline-2">
-<h2 id="orgf101a06">Módulo 2 - Conservação do <i>Momentum</i> Linear</h2>
-<div class="outline-text-2" id="text-orgf101a06">
+<div id="outline-container-orga89b314" class="outline-2">
+<h2 id="orga89b314">Módulo 2 - Conservação do <i>Momentum</i> Linear</h2>
+<div class="outline-text-2" id="text-orga89b314">
 <p>
 <a href="src/aula_setembro_25-26.html">[slides]​</a>
 </p>
@@ -217,9 +228,9 @@ Nesta aula, estudamos, com auxílio de uma FlatBall, a conservação do
 </p>
 </div>
 </div>
-<div id="outline-container-orgeca1d05" class="outline-2">
-<h2 id="orgeca1d05">Módulo 3 - Momento de Inércia</h2>
-<div class="outline-text-2" id="text-orgeca1d05">
+<div id="outline-container-org1ce18d5" class="outline-2">
+<h2 id="org1ce18d5">Módulo 3 - Momento de Inércia</h2>
+<div class="outline-text-2" id="text-org1ce18d5">
 <p>
 <a href="src/aula_outubro_16-17.html">[slides]​</a>
 </p>
@@ -234,9 +245,9 @@ Na prática, aproximamos a função horária proposta para
 válida para o regime de amortecimento subcrítico, em que \(\gamma \ll 2\omega_0\).
 </p>
 </div>
-<div id="outline-container-orgd1079c0" class="outline-3">
-<h3 id="orgd1079c0">Extra: aula de oscilador harmônico</h3>
-<div class="outline-text-3" id="text-orgd1079c0">
+<div id="outline-container-org197efbf" class="outline-3">
+<h3 id="org197efbf">Extra: aula de oscilador harmônico</h3>
+<div class="outline-text-3" id="text-org197efbf">
 <p>
 <a href="concurso-ufscar/aula.html">[slides]​</a>
 </p>
@@ -250,7 +261,7 @@ ficado alguma dúvida.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2025-10-30 Thu 16:45</p>
+<p class="date">Created: 2025-10-30 Thu 17:06</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
