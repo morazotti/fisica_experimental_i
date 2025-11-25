@@ -175,3 +175,6 @@ válida para o regime de amortecimento subcrítico, em que \(\gamma \ll 2\omega_
 
 Nestes slides, temos uma aula sobre oscilação harmônica, caso tenha
 ficado alguma dúvida.
+
+* Módulo 5 - Conservação do /Momentum/ Angular
+[[file:src/aula_novembro_27-28.html][[slides]​]]
