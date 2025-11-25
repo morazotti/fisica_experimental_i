@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+<meta charset="utf-8"/>
+<title>Conservação de <i>Momentum</i> Angular</title>
+<meta name="author" content="Prof. Nícolas Morazotti"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/blood.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h2 class="title">Conservação de <i>Momentum</i> Angular</h2>
+<p class="subtitle"></p> <h3 class="author">Prof. Nícolas Morazotti</h3> <h3 class="email"><a href="mailto:nicolas.morazotti@gmail.com">nicolas.morazotti@gmail.com</a></h3>
+<h3 class="date"></h3>
+</section>
+<section>
+<section id="slide-orga3805d0">
+<h2 id="orga3805d0">Introdução</h2>
+<div class="outline-text-2" id="text-orga3805d0">
+</div>
+</section>
+<section id="slide-org7138916" data-auto-animate>
+<h3 id="org7138916">Introdução</h3>
+<iframe width="960" height="540" src="https://www.youtube.com/embed/tB6X1d_PXuc" frameborder="0" allowfullscreen></iframe>
+</section>
+<section id="slide-org1978995" data-auto-animate>
+<h3 id="org1978995">Aulas da UFF - Professor Sá Martins</h3>
+<p>
+Breves aulas do professor Sá Martins sobre os assuntos da prática em questão, são bastante proveitosas. Sugiro que assistam.
+</p>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=-MKAEN2gKjY">Momento linear de um sistema físico</a></li>
+<li><a href="https://www.youtube.com/watch?v=xZpIJiAa_9M">Momento angular orbital e spin</a></li>
+
+</ul>
+</section>
+<section id="slide-org3ff8172" data-auto-animate>
+<h3 id="org3ff8172">Objetivos</h3>
+<ul>
+<li>Estudar, através de colisões bidimensionais, a conservação do
+<i>momentum</i> angular por videoanálise utilizando o brinquedo "flat balls"</li>
+
+</ul>
+</section>
+<section id="slide-org6cb666e" data-auto-animate>
+<h3 id="org6cb666e">Objetivos</h3>
+<ul>
+<li>Estudar, através de colisões bidimensionais, a conservação do
+<i>momentum</i> angular por videoanálise utilizando o brinquedo "flat balls"</li>
+<li>Reproduzir resultados publicados por Pérez et al. para este problema</li>
+
+</ul>
+
+<div id="orgbc33f67" class="figure">
+<p><img src="img/img-8ZmPGP.png" alt="img-8ZmPGP.png" width="700" />
+</p>
+</div>
+</section>
+<section id="slide-orgd37c3c5">
+<h3 id="orgd37c3c5">Equipamentos disponíveis</h3>
+<ul>
+<li>"Flat Balls"</li>
+<li>Balança digital</li>
+<li>Paquímetro</li>
+<li>Trena</li>
+<li>Sistema para medições de momento de inércia</li>
+<li>Suporte para fixação de câmera</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org8e7a20d">
+<h2 id="org8e7a20d">Conceitos estudados</h2>
+<div class="outline-text-2" id="text-org8e7a20d">
+</div>
+</section>
+<section id="slide-org7a7f701" data-auto-animate>
+<h3 id="org7a7f701">Conceitos estudados</h3>
+<ul>
+<li>Ao longo do semestre, vimos conceitos relacionados à cinemática e
+dinâmica de corpos</li>
+<li>Quais tipos de movimento temos?
+<ul>
+<li data-fragment-index="1" class="fragment appear">Translação</li>
+<li data-fragment-index="2" class="fragment appear">Rotação</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgff5a3a2" data-auto-animate>
+<h3 id="orgff5a3a2">Conceitos estudados</h3>
+<ul>
+<li>Ao longo do semestre, vimos conceitos relacionados à cinemática e
+dinâmica de corpos</li>
+<li>Quais tipos de movimento temos?
+<ul>
+<li>Translação</li>
+<li>Rotação</li>
+
+</ul></li>
+<li>Quais outros conceitos são relevantes?
+<ul>
+<li data-fragment-index="0" class="fragment appear">Centro de massa</li>
+<li data-fragment-index="1" class="fragment appear"><i>Momentum</i> linear</li>
+<li data-fragment-index="2" class="fragment appear">Momento de inércia</li>
+<li data-fragment-index="3" class="fragment appear">Corpo rígido</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org7c2f707" data-auto-animate>
+<h3 id="org7c2f707">Conceitos estudados</h3>
+<p>
+Tratamento <b>vetorial</b> se torna importantíssimo.
+</p>
+</section>
+<section id="slide-org4cde6fe" data-auto-animate>
+<h3 id="org4cde6fe">Centro de massa</h3>
+<ul>
+<li>A posição do centro de massa é um ponto fictício do corpo no qual
+toda a massa está concentrada</li>
+<li class="fragment appear">\(\vec{R} = \frac{\sum_{i=1}^N m_i \vec{r}_i}{\sum_{i=1}^N m_i}\)</li>
+<li class="fragment ppear">\(M = \sum_{i=1}^N m_i\) é a massa do corpo</li>
+<li class="fragment appear">\(\vec{R} = \frac{1}{M}\sum_{i=1}^N m_i \vec{r}_i\)</li>
+
+</ul>
+</section>
+<section id="slide-org1393196" data-auto-animate>
+<h3 id="org1393196"><i>Momentum</i> linear</h3>
+<ul>
+<li>\(\vec{R} = \frac{1}{M}\sum_{i=1}^N m_i \vec{r}_i\)</li>
+<li>O <i>momentum</i> linear de um corpo pode ser calculado por meio das
+velocidades individuais</li>
+<li class="fragment appear">\(\dot{\vec{r}}_i \equiv \frac{\mathrm{d}\vec{r}_i}{\mathrm{d}t}\)</li>
+<li class="fragment appear">\(\vec{P} = \sum_{i=1}^N m_i \dot{\vec{r}}_i\)</li>
+<li class="fragment appear">Repare que \(\dot{\vec{R}} = \frac{1}{M}\sum_{i=1}^N m_i \vec{r}_i\)</li>
+<li class="fragment appear">\(\vec{P} = M\dot{\vec{R}}\)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org379d4d7">
+<h2 id="org379d4d7"><i>Momentum</i> angular</h2>
+<div class="outline-text-2" id="text-org379d4d7">
+</div>
+</section>
+<section id="slide-org54309d9" data-auto-animate>
+<h3 id="org54309d9"><i>Momentum</i> angular</h3>
+
+<div id="orgf4e5e5e" class="figure">
+<p><img src="img/refmomang.png" alt="refmomang.png" />
+</p>
+</div>
+<ul>
+<li>\(\vec{r_i}' = \vec{r}_i - \vec{R}\)</li>
+<li>\(\vec{r}_i = \vec{r_i}' + \vec{R}\)</li>
+
+</ul>
+</section>
+<section id="slide-orgd32d43a" data-auto-animate>
+<h3 id="orgd32d43a"><i>Momentum</i> angular</h3>
+
+<div id="org9d95cbe" class="figure">
+<p><img src="img/refmomang.png" alt="refmomang.png" width="300" />
+</p>
+</div>
+
+<ul>
+<li>Essencialmente <b>vetorial</b></li>
+<li class="fragment appear">Para cada elemento \(m_i\), \(\vec{\jmath}_{i} = \vec{r}_i
+  \times \vec{p}_i\)</li>
+<li class="fragment appear">\(\vec{J} = \sum_{i=1}^N \vec{r}_i \times \vec{p}_i\)</li>
+
+</ul>
+</section>
+<section id="slide-orgb42c98b" data-auto-animate>
+<h3 id="orgb42c98b"><i>Momentum</i> angular</h3>
+<ul>
+<li><p>
+\(\vec{J} = \sum_{i=1}^N \vec{r}_i \times \vec{p}_i\)
+</p>
+
+<p>
+Usando \(\vec{p}_i = m_i \dot{\vec{r}}_i\), temos
+</p></li>
+<li>\(\vec{J} = \sum_{i=1}^N \vec{r}_i \times m_i\dot{\vec{r}}_i\)</li>
+
+</ul>
+</section>
+<section id="slide-org9d5a0d1" data-auto-animate>
+<h3 id="org9d5a0d1"><i>Momentum</i> angular</h3>
+<ul>
+<li>\(\vec{J} = \sum_{i=1}^N \vec{r}_i \times m_i\dot{\vec{r}}_i\)</li>
+<li><p>
+\(\vec{r}_i = \vec{r_i}' + \vec{R}\)
+</p>
+
+<p>
+Unindo as equações,
+</p></li>
+<li>\(\vec{J} = \sum_{i=1}^N (\vec{r_i}' + \vec{R}) \times m_i\left(\dot{\vec{r_i}'}+ \dot{\vec{R}}\right)\)</li>
+
+</ul>
+</section>
+<section id="slide-org991f190" data-auto-animate>
+<h3 id="org991f190"><i>Momentum</i> angular</h3>
+<ul>
+<li><p>
+\(\vec{J} = \sum_{i=1}^N (\vec{r_i}' + \vec{R}) \times m_i\left(\dot{\vec{r_i}'}+ \dot{\vec{R}}\right)\)
+</p>
+
+<p>
+Essa expressão tem quatro termos.
+</p></li>
+
+</ul>
+</section>
+<section id="slide-org963a476" data-auto-animate>
+<h3 id="org963a476"><i>Momentum</i> angular</h3>
+<ol>
+<li><font color="Magenta">\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{r_i}'}\)</font></li>
+<li><font color="Cyan">\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{R}}\)</font></li>
+<li><font color="Yellow">\(\sum_{i=1}^N m_i \vec{R} \times \dot{\vec{r_i}'}\)</font></li>
+<li><font color="LightGreen">\(\sum_{i=1}^N m_i \vec{R} \times \dot{\vec{R}}\)</font></li>
+
+</ol>
+</section>
+<section id="slide-org5fe270d" data-auto-animate>
+<h3 id="org5fe270d"><i>Momentum</i> angular</h3>
+<p>
+Veja que, na equação verde, \(\vec{R}\) não depende de \(i\).
+</p>
+<ul>
+<li><font color="LightGreen">\(\sum_{i=1}^N m_i \vec{R} \times \dot{\vec{R}}\)</font></li>
+<li class="fragment appear">\(\vec{R} \times \sum_{i=1}^N m_i \dot{\vec{R}}\)</li>
+<li class="fragment appear">\( \vec{R} \times M\dot{\vec{R}}\)</li>
+<li class="fragment appear">\(\vec{R} \times \vec{P} \equiv \vec{L}\)</li>
+
+</ul>
+</section>
+<section id="slide-org0a408ae" data-auto-animate>
+<h3 id="org0a408ae"><i>Momentum</i> angular</h3>
+<ol>
+<li><font color="Magenta">\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{r_i}'}\)</font></li>
+<li><font color="Cyan">\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{R}}\)</font></li>
+<li><font color="Yellow">\(\sum_{i=1}^N m_i \vec{R} \times \dot{\vec{r_i}'}\)</font></li>
+<li><font color="LightGreen">\(\vec{R} \times \vec{P}\)</font></li>
+
+</ol>
+</section>
+<section id="slide-orgbc8103c" data-auto-animate>
+<h3 id="orgbc8103c"><i>Momentum</i> angular</h3>
+<p>
+A equação em ciano pode ser simplificada.
+</p>
+<ul>
+<li><font color="Cyan">\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{R}}\)</font></li>
+<li class="fragment appear">A primeira parte é <b><font color="Yellow">a própria definição da posição do centro de massa</font></b>, mas no referencial do centro de massa.</li>
+<li class="fragment appear">Portanto, \(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{R}} \equiv 0\)</li>
+
+</ul>
+</section>
+<section id="slide-org26bbd85" data-auto-animate>
+<h3 id="org26bbd85"><i>Momentum</i> angular</h3>
+<ol>
+<li><font color="Magenta">\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{r_i}'}\)</font></li>
+<li><font color="Cyan">\(\vec{0}\)</font></li>
+<li><font color="Yellow">\(\sum_{i=1}^N m_i \vec{R} \times \dot{\vec{r_i}'}\)</font></li>
+<li><font color="LightGreen">\(\vec{R} \times \vec{P}\)</font></li>
+
+</ol>
+</section>
+<section id="slide-orga7bfd65" data-auto-animate>
+<h3 id="orga7bfd65"><i>Momentum</i> angular</h3>
+<p>
+Da mesma maneira, a equação amarela é nula.
+</p>
+<ul>
+<li><font color="Yellow">\(\sum_{i=1}^N m_i \vec{R} \times \dot{\vec{r_i}'}\)</font></li>
+<li class="fragment appear">\(\vec{R} \times \sum_{i=1}^N m_i \dot{\vec{r_i}'}\)</li>
+<li class="fragment appear">O segundo termo é <b><font color="Yellow">o <i>momentum</i> do centro de massa</font></b></li>
+<li class="fragment appear">Portanto nulo!</li>
+
+</ul>
+</section>
+<section id="slide-orgec8b9a3" data-auto-animate>
+<h3 id="orgec8b9a3"><i>Momentum</i> angular</h3>
+<ol>
+<li><font color="Magenta">\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{r_i}'}\)</font></li>
+<li><font color="Cyan">\(\vec{0}\)</font></li>
+<li><font color="Yellow">\(\vec{0}\)</font></li>
+<li><font color="LightGreen">\(\vec{R} \times \vec{P}\)</font></li>
+
+</ol>
+</section>
+<section id="slide-org0b1f3ad" data-auto-animate>
+<h3 id="org0b1f3ad"><i>Momentum</i> angular</h3>
+<p>
+Assim, \(\vec{J}\) é a soma de
+</p>
+<ol>
+<li><font color="Magenta">\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{r_i}'}\)</font></li>
+<li><font color="LightGreen">\(\vec{R} \times \vec{P}\)</font></li>
+
+</ol>
+
+<p>
+Podemos reescrevê-lo como \(\vec{J} =\) <font color="LightGreen">\(\vec{L}\ \)</font>\(+\)<font color="Magenta">\(\ \vec{S}\)</font>
+</p>
+</section>
+<section id="slide-orga49f8b4" data-auto-animate>
+<h3 id="orga49f8b4"><i>Momentum</i> angular</h3>
+<p>
+O termo magenta precisa ser massageado.
+</p>
+<ul>
+<li><font color="Magenta">\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{r_i}'}\)</font></li>
+<li class="fragment appear">A tabela de conversão que utilizamos entre grandezas translacionais
+e rotacionais era <b>apenas escalar</b></li>
+<li class="fragment appear">Nesse caso, precisamos utilizar \(\dot{\vec{r_i}'} = \vec{\omega} \times \vec{r_i}'\)</li>
+
+</ul>
+</section>
+<section id="slide-orgdae7efd" data-auto-animate>
+<h3 id="orgdae7efd"><i>Momentum</i> angular</h3>
+<ul>
+<li><font color="Magenta">\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{r_i}'}\)</font></li>
+<li>\(\dot{\vec{r_i}'} = \vec{\omega} \times \vec{r_i}'\)</li>
+<li class="fragment appear">\(\sum_{i=1}^N m_i \vec{r_i}' \times \left( \vec{\omega} \times \vec{r_i}' \right)\)</li>
+
+</ul>
+</section>
+<section id="slide-org1a27cc3" data-auto-animate>
+<h3 id="org1a27cc3"><i>Momentum</i> angular</h3>
+<ul>
+<li>\(\sum_{i=1}^N m_i \vec{r_i}' \times \left( \vec{\omega} \times \vec{r_i}' \right)\)</li>
+<li>O produto \(\vec{r_i}' \times \left( \vec{\omega} \times \vec{r_i}'
+  \right)\) recebe o nome de <b>produto triplo</b>!</li>
+<li class="fragment appear">Identidade vetorial (demonstre):</li>
+<li class="fragment appear">\(\vec{A} \times (\vec{B}\times\vec{C}) = (\vec{A}\cdot\vec{C})\vec{B} - (\vec{A}\cdot\vec{B})\vec{C}\)</li>
+
+</ul>
+</section>
+<section id="slide-org4bc30e5" data-auto-animate>
+<h3 id="org4bc30e5"><i>Momentum</i> angular</h3>
+<ul>
+<li>\(\sum_{i=1}^N m_i \vec{r_i}' \times \left( \vec{\omega} \times \vec{r_i}' \right)\)</li>
+<li>\(\vec{A} \times (\vec{B}\times\vec{C}) = (\vec{A}\cdot\vec{C})\vec{B} - (\vec{A}\cdot\vec{B})\vec{C}\)</li>
+<li class="fragment appear">O termo em magenta é, então, \(\sum_{i=1}^N m_i \left[ \left( \vec{r_i}'\cdot\vec{r_i}' \right) \vec{\omega} - \left( \vec{r_i}'\cdot\vec{\omega} \right) \vec{r_i}' \right]\)</li>
+<li class="fragment appear">Veja que \(\vec{\omega}\) é ortogonal a \(\vec{r_{i}}'\) e, portanto, \(\vec{r_i}'\cdot\vec{\omega} \equiv 0\)</li>
+
+</ul>
+</section>
+<section id="slide-orgf954b13" data-auto-animate>
+<h3 id="orgf954b13"><i>Momentum</i> angular</h3>
+<p>
+Assim,
+</p>
+<ul>
+<li>\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{r_i}'} = \sum_{i=1}^N m_i r_i'^2 \vec{\omega}\)</li>
+<li class="fragment appear">O termo \(\sum_{i=1}^N m_i r_i'^2\) é o momento de inércia em
+relação ao centro de massa!</li>
+<li class="fragment appear">\(I \vec{\omega} \equiv \vec{S}\)</li>
+
+</ul>
+</section>
+<section id="slide-orga134c85" data-auto-animate>
+<h3 id="orga134c85"><i>Momentum</i> angular</h3>
+<p>
+\(\vec{J} =\) <font color="LightGreen">\(\vec{L}\ \)</font>\(+\)<font color="Magenta">\(\ \vec{S}\)</font>
+</p>
+
+<ul>
+<li class="fragment appear">\(\vec{L}\) é chamado de <b><font color="LightGreen"><i>momentum</i> angular orbital</font></b></li>
+<li class="fragment appear">\(\vec{S}\) é chamado de <b><font color="Magenta"><i>momentum</i> angular intrínseco</font></b></li>
+<li class="fragment appear">Ou <b><font color="Magenta"><i>spin</i></font></b>.</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown, RevealZoom, RevealNotes],
+slideNumber:"c/t"
+});
+
+</script>
+</body>
+</html>
