@@ -216,7 +216,7 @@ Veja que, na equação verde, \(\vec{R}\) não depende de \(i\).
 A equação em ciano pode ser simplificada.
 #+attr_reveal: :frag (none appear)
 - {{{cyan(\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{R}}\))}}}
-- A primeira parte é *{{{yellow(a própria definição da posição do centro de massa)}}}*, mas no referencial do centro de massa.
+- A primeira parte é *{{{cyan(a própria definição da posição do centro de massa)}}}*, mas no referencial do centro de massa.
 - Portanto, \(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{R}} \equiv 0\)
 ** /Momentum/ angular
 :PROPERTIES:
@@ -290,7 +290,7 @@ O termo magenta precisa ser massageado.
 #+attr_reveal: :frag (none none appear)
 - \(\sum_{i=1}^N m_i \vec{r_i}' \times \left( \vec{\omega} \times \vec{r_i}' \right)\)
 - \(\vec{A} \times (\vec{B}\times\vec{C}) = (\vec{A}\cdot\vec{C})\vec{B} - (\vec{A}\cdot\vec{B})\vec{C}\)
-- O termo em magenta é, então, \(\sum_{i=1}^N m_i \left[ \left( \vec{r_i}'\cdot\vec{r_i}' \right) \vec{\omega} - \left( \vec{r_i}'\cdot\vec{\omega} \right) \vec{r_i}' \right]\)
+- O termo em magenta é, então, {{{magenta(\(\sum_{i=1}^N m_i \left[ \left( \vec{r_i}'\cdot\vec{r_i}' \right) \vec{\omega} - \left( \vec{r_i}'\cdot\vec{\omega} \right) \vec{r_i}' \right]\))}}} 
 - Veja que \(\vec{\omega}\) é ortogonal a \(\vec{r_{i}}'\) e, portanto, \(\vec{r_i}'\cdot\vec{\omega} \equiv 0\)
 ** /Momentum/ angular
 :PROPERTIES:
@@ -298,7 +298,7 @@ O termo magenta precisa ser massageado.
 :END:
 Assim,
 #+attr_reveal: :frag (none appear)
-- \(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{r_i}'} = \sum_{i=1}^N m_i r_i'^2 \vec{\omega}\)
+- {{{magenta(\(\sum_{i=1}^N m_i \vec{r_i}' \times \dot{\vec{r_i}'} = \sum_{i=1}^N m_i r_i'^2 \vec{\omega}\))}}} 
 - O termo \(\sum_{i=1}^N m_i r_i'^2\) é o momento de inércia em
   relação ao centro de massa!
 - \(I \vec{\omega} \equiv \vec{S}\)
